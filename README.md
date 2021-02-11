@@ -60,7 +60,7 @@ This can be manually tested or using any test tool
 
 
 ## Contributors:
-Megan Carnaghi <https://github.com/MeganCarnaghi>
-Brian Smak <https://github.com/bjsmak>
-Daniel Hawthorne-Foss  <https://github.com/dhfoss>
+Megan Carnaghi <https://github.com/MeganCarnaghi><br>
+Brian Smak <https://github.com/bjsmak><br>
+Daniel Hawthorne-Foss  <https://github.com/dhfoss><br>
 Rodolfo Diaz <https://github.com/Rodolfod1>
