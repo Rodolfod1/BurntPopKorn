@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# WatchBudy App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+#### Link to deployed app
+ <https://budget-pr.herokuapp.com>
+   
+MIT<br>[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-In the project directory, you can run:
+## About this application:
+`React`,`Node.js`, `Mongodb`, `mongoose`, `Express`, `service workers`, `indexDB` application, handling api and html routes, offering an offline experience in case of intermittent internet service.
 
-### `npm start`
+## Table of contents:
+* [Progressive Budget](#Progressive-Budget)
+* [About](#about-this-application)
+* [Usage](#usage)
+* [Installation](#installation)
+* [License](#license)
+* [Testing](#special-testing-instructions)
+* [Contributors](#contributors)
+* [Link to App](#Link-to-deployed-app)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Usage:
+    Keffiyeh thundercats locavore, sustainable swag intelligentsia whatever keytar echo park portland leggings umami. Hammock snackwave stumptown keytar. Viral meditation hammock pour-over food truck vegan marfa forage. Before they sold out retro activated charcoal trust fund pok pok.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    Coloring book YOLO edison bulb PBR&B tumeric vaporware, gentrify iceland selfies flannel photo booth paleo shaman pabst. Selvage YOLO farm-to-table crucifix, retro cardigan stumptown. Enamel pin tousled succulents franzen, lyft readymade austin raw denim subway tile kickstarter +1 selvage. Mlkshk austin normcore schlitz cornhole ramps portland XOXO kickstarter shaman gluten-free typewriter franzen leggings.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Here it is an example on how this application works:
 
-### `npm run build`
+![videoDemo](public/assets/Demo.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
+## Installation:
+### For Local Deployment: 
+The application requires `mongoose`, `Express`, `dotenv` and `morgan` node packages.
+a JSON file is provided with these dependencies please Run `npm install`  before executing `node Server.js`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+IMPORTANT: Please create a `dontenv` file for your MONGODB_URI and call the link to your Atlas database service connection with your username and password  password.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### For Remote Deployment: 
+Please "click" on this link to go to the heroku version of this app:
 
-### `npm run eject`
+<https://app.herokuapp.com>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## License
+I have used the MIT license for this application see repository documentation.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<https://opensource.org/licenses/MIT>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Testing
+This can be manually tested or using any test tool
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Code Screenshots:
+- Service worker configuration example 
+![ServiceWorker](public/assets/img/ServiceWorkerImg.png)<br>
+- IndexDB Configuration for offline db handling:<br>
+![IndexDB](public/assets/img/IndexDBImg.png)
+ 
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributors:
+Megan Carnaghi <https://github.com/MeganCarnaghi>
+Brian Smak <https://github.com/bjsmak>
+Daniel Hawthorne-Foss  <https://github.com/dhfoss>
+Rodolfo Diaz <https://github.com/Rodolfod1>
