@@ -2,6 +2,7 @@
   "name": "twatch",
   "version": "0.1.0",
   "private": true,
+  "main": "server.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -12,6 +13,7 @@
     "express": "^4.17.1",
     "mongodb": "^3.6.4",
     "mongoose": "^5.11.15",
+    "nodemon": "^2.0.7",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
@@ -21,12 +23,7 @@
     "socket.io": "^3.1.1",
     "web-vitals": "^1.1.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+  "scripts": {},
   "eslintConfig": {
     "extends": [
       "react-app",
