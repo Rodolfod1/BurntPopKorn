@@ -13,6 +13,8 @@
     "mongodb": "^3.6.4",
     "mongoose": "^5.11.15",
     "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.2",
