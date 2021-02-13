@@ -1,4 +1,4 @@
-/* Generic Styling for page */
+/* Generic Styling */
 * {
   margin: 0;
   padding: 0;
@@ -7,68 +7,22 @@
 html,
 body {
   background-color: #000000;
-  font-family: hanken-light;
+  font-family: "Hanken-Book";
+  font-size: 18px;
 }
 
 /* Font for headings */
 @font-face {
-  font-family: fv_almelo;
-  src: url("client/src/fonts/fv_almelo-webfont.ttf") format("truetype");
-  font-style: normal;
-}
-
-/* Font for body */
-/* BOLD */
-@font-face {
-  font-family: hanken-bold;
-  src: url("client/src/fonts/Hanken-Book.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-/* REGULAR */
-@font-face {
-  font-family: hanken-light;
-  src: url("client/src/fonts/Hanken-Light.ttf") format("truetype");
+  font-family: "FVAlmeloRegular";
+  src: url("fv_almelo-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-/* .App {
-  text-align: center;
+/* Font for body -- BOLD */
+@font-face {
+  font-family: "Hanken-Book";
+  src: url("Hanken-Book.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
