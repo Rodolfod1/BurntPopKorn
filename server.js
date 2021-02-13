@@ -23,6 +23,13 @@ mongoose.connect(
       console.log("Successfully Connected to your DB");
   });
 
+
+  // preparing production environment for heroku deployment 
+  if(process.env.NODE_ENV == 'production'){
+      app.use(express.static('client/build'));
+  }
+
+  
 app.listen(PORT, () => {
     console.log(`Server listening at http://localhost:${PORT}`);
 });

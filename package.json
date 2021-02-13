@@ -26,7 +26,11 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    
+    "build":"npm run build",
+    "install-client": "cd client && npm run install",
+    "heroku-postbuild":"npm run install-client && npm run build",
+    "start":"node server.js",
+    "client":"cd client && npm start"    
   },
   "eslintConfig": {
     "extends": [
