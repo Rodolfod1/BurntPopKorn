@@ -5,7 +5,11 @@ import React from "react";
 function HeaderSignIn() {
   return (
     <div class="header">
-      <img class="header__logo" src="burntpopkorn logo.png" alt="logo" />
+      <img
+        class="header__logo"
+        src="client/src/images/burntpopkorn logo.png"
+        alt="logo"
+      />
       <button class="heading__button">SIGN IN</button>
     </div>
   );

@@ -3,7 +3,11 @@ import React from "react";
 function Footer() {
   return (
     <div className="footer">
-      <img className="footer__img" src="logo-no-text.png" alt="logo" />
+      <img
+        className="footer__img"
+        src="client/src/images/logo-no-text.png"
+        alt="logo"
+      />
 
       <div className="footer__contactDiv">
         <h4 className="footer__h4">Created By</h4>
