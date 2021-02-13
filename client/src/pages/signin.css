@@ -1,0 +1,56 @@
+.main {
+  background-image: url(pexels-amateur-hub-3571503.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 174.3px);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.main__h1 {
+  color: #fdcf05;
+  margin: 20px 30px;
+  text-align: center;
+  font-family: "FVAlmeloRegular";
+}
+
+.main__p {
+  color: #ffffff;
+  text-align: center;
+}
+
+.main__div {
+  margin-top: 75px;
+  width: 50%;
+}
+
+.form {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__input {
+  font-family: "Hanken-Book";
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 15px 0px 5px 10px;
+  border: none;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.form__button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: "Hanken-Book";
+  background-color: #fdcf05;
+  margin: 10px;
+}
+
+.form__button:hover {
+  cursor: pointer;
+}

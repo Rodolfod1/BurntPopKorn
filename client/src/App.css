@@ -14,7 +14,7 @@ body {
 /* Font for headings */
 @font-face {
   font-family: "FVAlmeloRegular";
-  src: url("fv_almelo-webfont.ttf") format("truetype");
+  src: url("client/src/fonts/fv_almelo-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -22,7 +22,7 @@ body {
 /* Font for body -- BOLD */
 @font-face {
   font-family: "Hanken-Book";
-  src: url("Hanken-Book.ttf") format("truetype");
+  src: url("client/src/fonts/Hanken-Book.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
