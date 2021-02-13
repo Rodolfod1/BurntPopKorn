@@ -25,7 +25,9 @@
     "socket.io": "^3.1.1",
     "web-vitals": "^1.1.0"
   },
-  "scripts": {},
+  "scripts": {
+    
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -43,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.5.0"
   }
 }
