@@ -1,0 +1,35 @@
+.header {
+  width: 100%;
+  background-color: #000000;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  width: 400px;
+}
+
+.heading__button {
+  padding: 10px 20px;
+  margin: 20px;
+  background-color: #fdcf05;
+  border-radius: 10px;
+  font-family: "Hanken-Book";
+}
+
+.heading__button:hover {
+  cursor: pointer;
+}
+
+/* Styling for mobile devices */
+
+@media only screen and (max-width: 768px) {
+  .header__logo {
+    width: 300px;
+  }
+  .header {
+    border-bottom: 2px solid #fdcf05;
+  }
+}
