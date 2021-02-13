@@ -1,6 +1,6 @@
 import axios from "axios";
 //import REACT_APP_APIKEY from ""
-const APIKEY = process.env.REACT_APP_OMDB_APIKEY;
+const APIKEY = process.env.REACT_APP_APIKEY;
 const BASEURL = "http://www.omdbapi.com/?i=tt3896198&apikey=" + APIKEY;
 
 console.log(BASEURL);
