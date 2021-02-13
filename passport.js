@@ -40,6 +40,6 @@ passport.use(new LocalStrategy((username, password, done) => {
             return done(null, false)
         // Custum method from the user model
         // Check if password is correct
-        user.comparePasssword(password, done);
+        user.comparePassword(password, done);
     })
 }));
