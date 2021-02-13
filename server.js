@@ -10,9 +10,18 @@ app.use(cookieParser());
 app.use(express.json());
 app.use('/user', userRouter);
 
-mongoose.connect('mongodb://localhost:27017/movieapp', {useNewUrlParser: true, useUnifiedTopology: true}, () => {
-    console.log('Successfull connection to DB');
-});
+// configuring for AtlasDB connection 
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost:27017/movieapp",
+    {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  },
+  ()=>{
+      console.log("Successfully Connected to your DB");
+  });
 
 app.listen(PORT, () => {
     console.log(`Server listening at http://localhost:${PORT}`);
