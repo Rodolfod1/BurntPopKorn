@@ -1,4 +1,40 @@
-.App {
+/* Generic Styling for page */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background-color: #000000;
+  font-family: hanken-light;
+}
+
+/* Font for headings */
+@font-face {
+  font-family: fv_almelo;
+  src: url("client/src/fonts/fv_almelo-webfont.ttf") format("truetype");
+  font-style: normal;
+}
+
+/* Font for body */
+/* BOLD */
+@font-face {
+  font-family: hanken-bold;
+  src: url("client/src/fonts/Hanken-Book.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* REGULAR */
+@font-face {
+  font-family: hanken-light;
+  src: url("client/src/fonts/Hanken-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +71,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
