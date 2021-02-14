@@ -4,7 +4,7 @@ const passport = require('passport');
 const passportCongig = require('../../passport');
 const JWT = require('jsonwebtoken');
 const User = require('../../models/User');
-const Movie = require('../../models/Movie');
+const Movie = require('../../models/movie');
 
 const { authenticate } = require('passport');
 
