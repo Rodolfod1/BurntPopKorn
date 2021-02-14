@@ -1,9 +1,9 @@
-# WatchBudy App
+# BurntPopKorn App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 #### Link to deployed app
- <https://budget-pr.herokuapp.com>
+ <https://https://burntpopkorn.herokuapp.com/>
    
 MIT<br>[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -41,7 +41,7 @@ IMPORTANT: Please create a `dontenv` file for your MONGODB_URI and call the link
 ### For Remote Deployment: 
 Please "click" on this link to go to the heroku version of this app:
 
-<https://app.herokuapp.com>
+<https://burntpopkorn.herokuapp.com/>
 
 ## License
 I have used the MIT license for this application see repository documentation.
