@@ -9,9 +9,11 @@
     "@testing-library/user-event": "^12.6.3",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
+    "concurrently": "^5.3.0",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.4",
     "mongoose": "^5.11.15",
@@ -26,11 +28,14 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-   
-    "install-client": "cd client && npm install && npm run build ",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client",
-    "start": "node server.js",
-    "client": "cd client && npm start"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client"
   },
   "eslintConfig": {
     "extends": [

@@ -2,18 +2,18 @@ const express = require('express');
 const app = express();
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
-const Path = require ('path');
-const userRouter = require('./routes/API/User');
+const path = require ('path');
+const apiRouter = require('./routes');
 
 const PORT = (process.env.PORT || 3001);
 
 app.use(cookieParser());
 app.use(express.json());
-app.use('/user', userRouter);
+app.use(apiRouter);
 
 // configuring for AtlasDB connection 
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost:27017/movieapp",
+    process.env.MONGODB_URI || "mongodb://localhost/movieapp",
     {
     useNewUrlParser: true,
     useUnifiedTopology: true,
