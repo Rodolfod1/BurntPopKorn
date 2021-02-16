@@ -1,3 +1,5 @@
+import React, { useContext } from 'react';
+import { AuthContext } from './authentication/AuthContext';
 import Home from "./pages/home";
 //import SignIn from './pages/signIn'
 //import Profile from './pages/profile'
@@ -6,7 +8,10 @@ import "./utils/api";
 
 
 function App() {
-  return (
+  const {user, setUser, isAuthenticated, setIsAuthenticated} = useContext(AuthContext);
+  console.log(user);
+  console.log(isAuthenticated);
+  return (    
     <Router>
       <div>
         <Route exact path="/">
