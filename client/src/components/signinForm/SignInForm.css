@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "FVAlmeloRegular";
+  src: url("../fonts/fv_almelo-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hanken-Book";
+  src: url("../fonts/Hanken-Book.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 .main {
   background-image: url(client/src/images/pexels-amateur-hub-3571503.jpg);
   background-size: cover;
