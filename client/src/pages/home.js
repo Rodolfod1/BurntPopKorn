@@ -36,55 +36,12 @@ function Home() {
           placeholder="Start typing a movie or tv show name..."
         ></input>
       </div>
-
-      <button className="homepage__profileBtn">View Profile</button>
-
-      <div className="homepage__cardSection row1">
-        <div className="homepage__card">
-          <img
-            className="homepage__cardImg"
-            src="..."
-            class="card-img-top"
-            alt="..."
-          />
-          <div className="homepage__cardBody">
-            <p>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-        <div className="homepage__card">
-          <img
-            className="homepage__cardImg"
-            src="..."
-            class="card-img-top"
-            alt="..."
-          />
-          <div className="homepage__cardBody">
-            <p>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-        <div className="homepage__card">
-          <img
-            className="homepage__cardImg"
-            src="..."
-            class="card-img-top"
-            alt="..."
-          />
-          <div className="homepage__cardBody">
-            <p>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
+      <div className="homepage__headers">
+        <h1 className="homepage__cardh1">Trending Now</h1>
+        <h1 className="homepage__favoritesh1">Your Favorites</h1>
       </div>
 
-      <div className="homepage__cardSection row2">
+      <div className="homepage__cardSection">
         <div className="homepage__card">
           <img
             className="homepage__cardImg"
@@ -127,8 +84,6 @@ function Home() {
             </p>
           </div>
         </div>
-      </div>
-      <div className="homepage__cardSection row3">
         <div className="homepage__card">
           <img
             className="homepage__cardImg"
