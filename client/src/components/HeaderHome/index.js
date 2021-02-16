@@ -1,6 +1,6 @@
 import React from "react";
 
-function HeaderSignIn() {
+function HeaderHome() {
   return (
     <div className="header">
       <img
@@ -8,9 +8,9 @@ function HeaderSignIn() {
         src="client/src/images/burntpopkorn logo.png"
         alt="logo"
       />
-      <button className="heading__button-signin">SIGN IN</button>
+      <button className="heading__button-signout">SIGN OUT</button>
     </div>
   );
 }
 
-export default HeaderSignIn;
+export default HeaderHome;

@@ -5,13 +5,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 2px solid #fdcf05;
 }
 
 .header__logo {
   width: 400px;
 }
 
-.heading__button-signin {
+.heading__button-signout {
   padding: 10px 20px;
   margin: 20px;
   background-color: #fdcf05;
@@ -19,7 +20,7 @@
   font-family: "Hanken-Book";
 }
 
-.heading__button-signin:hover {
+.heading__button-signout:hover {
   cursor: pointer;
 }
 
