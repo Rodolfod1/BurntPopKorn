@@ -28,9 +28,30 @@
   font-size: 16px;
 }
 
+.homepage__headers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.homepage__cardh1 {
+  font-family: "FVAlmeloRegular";
+  color: #00aceb;
+  margin: 0 50px;
+  font-size: 36px;
+}
+
+.homepage__favoritesh1 {
+  font-family: "FVAlmeloRegular";
+  color: #ee1d24;
+  margin: 0 50px;
+  font-size: 36px;
+}
+
 .homepage__cardSection {
   margin: 20px 30px;
   display: flex;
+  flex-wrap: wrap;
+  width: 70%;
 }
 
 .homepage__card {
