@@ -1,0 +1,43 @@
+* {
+  font-family: "Hanken-Light";
+  font-size: 16px;
+}
+
+.homepage__searchSection {
+  display: flex;
+  margin: 40px;
+}
+
+.homepage__searchBtn {
+  padding: 10px 20px;
+  margin: 0 5px;
+  background-color: #00aceb;
+  border-radius: 10px;
+  font-family: "Hanken-Book";
+}
+
+.homepage__searchBtn:hover {
+  cursor: pointer;
+}
+
+.homepage__searchInput {
+  width: 40%;
+  padding: 8px;
+  margin: 0px;
+  font-family: "Hanken-Book";
+  font-size: 16px;
+}
+
+.homepage__cardSection {
+  margin: 20px 30px;
+  display: flex;
+}
+
+.homepage__card {
+  width: 16rem;
+  padding: 15px;
+  margin: 20px;
+  border: 1px solid #00aceb;
+  border-radius: 5px;
+  color: #ffffff;
+}
