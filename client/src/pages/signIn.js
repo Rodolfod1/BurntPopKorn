@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../components/HeaderSignIn/HeaderSignIn.css";
 import "../components/Footer/Footer.css";
+import '../components/signinForm/SignInForm.css'
 import HeaderSignIn from "../components/HeaderSignIn";
 import SignInForm from "../components/signinForm";
 import Footer from "../components/Footer";

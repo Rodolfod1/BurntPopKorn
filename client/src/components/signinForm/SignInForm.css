@@ -1,4 +1,7 @@
-@font-face {
+/* I commented out the two fonts. The fonts are being applied by the home.css, so these
+were not doing anything anywas */
+
+/* @font-face {
   font-family: "FVAlmeloRegular";
   src: url("../fonts/fv_almelo-webfont.ttf") format("truetype");
   font-weight: normal;
@@ -7,13 +10,22 @@
 
 @font-face {
   font-family: "Hanken-Book";
-  src: url("../fonts/Hanken-Book.ttf") format("truetype");
+  src: url('../fonts/Hanken-Book.ttf') format("truetype");
   font-weight: bold;
   font-style: normal;
-}
+} */
 
 .main {
-  background-image: url(client/src/images/pexels-amateur-hub-3571503.jpg);
+
+  background: url('../images/pexels-amateur-hub-3571503.jpg') no-repeat;
+
+  /* Previously had this: 
+  background-image: './client/src/images/pexels-amateur-hub-3571503.jpg'; */
+
+  /* For some reason 'background-image' doesn't work, but 'background' does. 
+  Also, I fixed the url so that the path is relative from the SinInForm.css file,
+  rather than starting in the client folder */
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
