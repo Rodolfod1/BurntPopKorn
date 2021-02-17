@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../components/images/burntpopkorn logo.png";
 import "./login.css";
 
 function LogIn() {
