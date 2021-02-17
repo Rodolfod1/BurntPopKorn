@@ -11,7 +11,7 @@
   width: 400px;
 }
 
-.heading__button-signin {
+.header__button-signin {
   padding: 10px 20px;
   margin: 20px;
   background-color: #fdcf05;
@@ -19,7 +19,7 @@
   font-family: "Hanken-Book";
 }
 
-.heading__button-signin:hover {
+.header__button-signin:hover {
   cursor: pointer;
 }
 

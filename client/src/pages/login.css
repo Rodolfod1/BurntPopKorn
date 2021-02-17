@@ -1,18 +1,36 @@
-.header__home {
+@font-face {
+  font-family: "FVAlmeloRegular";
+  src: url("../fonts/fv_almelo-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hanken-Book";
+  src: url("../fonts/Hanken-Book.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  font-family: "Hanken-Book";
+  font-size: 16px;
+}
+
+.header {
   width: 100%;
   background-color: #000000;
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #fdcf05;
 }
 
 .header__logo {
   width: 400px;
 }
 
-.heading__button-signout {
+.heading__homeBtn {
   padding: 10px 20px;
   margin: 20px;
   background-color: #fdcf05;
@@ -20,7 +38,7 @@
   font-family: "Hanken-Book";
 }
 
-.heading__button-signout:hover {
+.heading__homeBtn:hover {
   cursor: pointer;
 }
 
@@ -30,7 +48,7 @@
   .header__logo {
     width: 300px;
   }
-  .header__home {
+  .header {
     border-bottom: 2px solid #fdcf05;
   }
 }

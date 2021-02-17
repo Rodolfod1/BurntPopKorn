@@ -3,7 +3,7 @@ import logo from "../images/burntpopkorn logo.png";
 
 function HeaderHome() {
   return (
-    <div className="header">
+    <div className="header__home">
       <img className="header__logo" src={logo} alt="logo" />
       <button className="heading__button-signout">SIGN OUT</button>
     </div>
