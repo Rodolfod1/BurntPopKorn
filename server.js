@@ -27,8 +27,9 @@ mongoose.connect(
 
   // preparing production environment for heroku deployment 
   if(process.env.NODE_ENV === 'production'){
+      // this calls the build folder to our server 
       app.use(express.static('client/build'));
-
+        // this will server the index.html from the front end 
       app.get('*',(req,res)=>{
           res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
       })
