@@ -3,6 +3,7 @@ import API from "../utils/api";
 import HeaderHome from "../components/HeaderHome";
 import "../components/HeaderHome/HeaderHome.css";
 import "./home.css";
+import { Link } from 'react-router-dom';
 
 //setState for title searches
 
@@ -28,6 +29,9 @@ function Home() {
         <button className="homepage__searchBtn" onClick={handleClick}>
           SEARCH
         </button>
+        <Link to="/signin">
+          GO HOME
+        </Link>
         <input
           className="homepage__searchInput"
           type="text"
