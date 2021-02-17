@@ -17,6 +17,7 @@
   font-size: 16px;
 }
 
+/* Styling for Search Bar Section */
 .homepage__searchSection {
   display: flex;
   margin: 40px;
@@ -42,37 +43,17 @@
   font-size: 16px;
 }
 
-.homepage__headers {
+/* Styling for Main Div */
+.main {
   display: flex;
-  justify-content: space-between;
 }
-
-.homepage__cardh1 {
-  font-family: "FVAlmeloRegular";
-  color: #00aceb;
-  margin: 0 50px;
-  font-size: 36px;
-}
-
-.homepage__favoritesh1 {
-  font-family: "FVAlmeloRegular";
-  color: #ee1d24;
-  margin: 0 50px;
-  font-size: 36px;
-}
-
-.homepage__cardSection {
-  margin: 20px 30px;
-  display: flex;
-  flex-wrap: wrap;
-  width: 70%;
-}
-
-.homepage__card {
-  width: 16rem;
-  padding: 15px;
-  margin: 20px;
+/* Styling for Search Results Div */
+.main__searchresults {
   border: 1px solid #00aceb;
   border-radius: 5px;
-  color: #ffffff;
+}
+/* Styling for Favorites Div */
+.main__favoritesH1 {
+  font-family: "FVAlmeloRegular";
+  color: #ee1d24;
 }

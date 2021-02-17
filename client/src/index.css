@@ -3,7 +3,23 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: "FVAlmeloRegular";
+  src: url("../fonts/fv_almelo-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hanken-Book";
+  src: url("../fonts/Hanken-Book.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 html,
 body {
   background-color: #000000;
+  font-family: "Hanken-Book";
+  font-size: 16px;
 }
