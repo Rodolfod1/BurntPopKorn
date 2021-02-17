@@ -1,23 +1,5 @@
-/* I commented out the two fonts. The fonts are being applied by the home.css, so these
-were not doing anything anywas */
-
-/* @font-face {
-  font-family: "FVAlmeloRegular";
-  src: url("../fonts/fv_almelo-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Hanken-Book";
-  src: url('../fonts/Hanken-Book.ttf') format("truetype");
-  font-weight: bold;
-  font-style: normal;
-} */
-
 .main {
-
-  background: url('../images/pexels-amateur-hub-3571503.jpg') no-repeat;
+  background: url("../images/pexels-amateur-hub-3571503.jpg") no-repeat;
 
   /* Previously had this: 
   background-image: './client/src/images/pexels-amateur-hub-3571503.jpg'; */

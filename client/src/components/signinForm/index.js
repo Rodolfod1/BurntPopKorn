@@ -1,6 +1,6 @@
 import React, { useState, useContext, useRef } from "react";
-import { AuthService } from '../../authentication/AuthService';
-import { AuthContext } from '../../authentication/AuthContext';
+import { AuthService } from "../../authentication/AuthService";
+import { AuthContext } from "../../authentication/AuthContext";
 
 function SignInForm(props) {
   const authContext = useContext(AuthContext);
@@ -8,7 +8,7 @@ function SignInForm(props) {
   const passwordRef = useRef();
   const confirmPasswordRef = useRef();
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     if (!usernameRef.current.value) {
       return;
@@ -16,12 +16,13 @@ function SignInForm(props) {
     if (passwordRef.current.value !== confirmPasswordRef.current.value) {
       return;
     }
-    AuthService.register({username: usernameRef.current.value, password: passwordRef.current.value})
-    .then(data => {
+    AuthService.register({
+      username: usernameRef.current.value,
+      password: passwordRef.current.value,
+    }).then((data) => {
       console.log(data);
-    })
-  }
-
+    });
+  };
 
   return (
     <div className="main">
@@ -29,7 +30,7 @@ function SignInForm(props) {
         <h1 className="main__h1">
           Because there's nothing worse than terrible movies...
         </h1>
-        <h1>except for maybe burnt popcorn.</h1>
+        <h1 className="main__h1">except for maybe burnt popcorn.</h1>
         <p className="main__p">
           Ready to get started? Create your account now.
         </p>
@@ -68,7 +69,6 @@ function SignInForm(props) {
             value="CREATE ACCOUNT"
           />
         </form>
-
       </div>
     </div>
   );
