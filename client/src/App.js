@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { AuthContext } from "./authentication/AuthContext";
 import Home from "./pages/home";
-import SignIn from './pages/signIn'
+import SignIn from "./pages/signIn";
+import LogIn from "./pages/login";
 //import Profile from './pages/profile'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./utils/api";
@@ -17,12 +18,15 @@ function App() {
     <Router>
       <div>
         <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/signin">
-          <SignIn />
-        </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/signin">
+            <SignIn />
+          </Route>
+          <Route exact path="/login">
+            <LogIn />
+          </Route>
         </Switch>
       </div>
     </Router>
