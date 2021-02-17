@@ -3,7 +3,7 @@ import API from "../utils/api";
 import HeaderHome from "../components/HeaderHome";
 import "../components/HeaderHome/HeaderHome.css";
 import "./home.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 //setState for title searches
 
@@ -23,15 +23,14 @@ function Home() {
 
   return (
     <div className="homepage__container">
+      {/* Header Section */}
+      <Link to="/signin">GO HOME</Link>
       <HeaderHome />
-
+      {/* Searchbar Section */}
       <div className="homepage__searchSection">
         <button className="homepage__searchBtn" onClick={handleClick}>
           SEARCH
         </button>
-        <Link to="/signin">
-          GO HOME
-        </Link>
         <input
           className="homepage__searchInput"
           type="text"
@@ -40,95 +39,16 @@ function Home() {
           placeholder="Start typing a movie or tv show name..."
         ></input>
       </div>
-      <div className="homepage__headers">
-        <h1 className="homepage__cardh1">Trending Now</h1>
-        <h1 className="homepage__favoritesh1">Your Favorites</h1>
-      </div>
-
-      <div className="homepage__cardSection">
-        <div className="homepage__card">
-          <img
-            className="homepage__cardImg"
-            src="..."
-            class="card-img-top"
-            alt="..."
-          />
-          <div className="homepage__cardBody">
-            <p>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
+      {/* Main Container with Search Results and Favorites Sections */}
+      <div className="main">
+        {/* Search Results Section */}
+        <div className="main__searchresults">
+          <div className="main__movieresult"></div>
+          <div className="main__movieRating"></div>
         </div>
-        <div className="homepage__card">
-          <img
-            className="homepage__cardImg"
-            src="..."
-            class="card-img-top"
-            alt="..."
-          />
-          <div className="homepage__cardBody">
-            <p>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-        <div className="homepage__card">
-          <img
-            className="homepage__cardImg"
-            src="..."
-            class="card-img-top"
-            alt="..."
-          />
-          <div className="homepage__cardBody">
-            <p>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-        <div className="homepage__card">
-          <img
-            className="homepage__cardImg"
-            src="..."
-            class="card-img-top"
-            alt="..."
-          />
-          <div className="homepage__cardBody">
-            <p>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-        <div className="homepage__card">
-          <img
-            className="homepage__cardImg"
-            src="..."
-            class="card-img-top"
-            alt="..."
-          />
-          <div className="homepage__cardBody">
-            <p>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
-        </div>
-        <div className="homepage__card">
-          <img
-            className="homepage__cardImg"
-            src="..."
-            class="card-img-top"
-            alt="..."
-          />
-          <div className="homepage__cardBody">
-            <p>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-          </div>
+        {/* Favorites Section */}
+        <div className="main__favorites">
+          <h1 className="main__favoritesH1">Your Favorites</h1>
         </div>
       </div>
     </div>
