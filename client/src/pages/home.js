@@ -13,7 +13,7 @@ function Home() {
 
   const handleClick = (event) => {
     API.getOMDb(search).then((moviedata) => {
-      setResults(moviedata.data)
+      setResults(moviedata.data);
       setSearch("");
     });
   };
@@ -29,68 +29,77 @@ function Home() {
       {/* Header Section */}
       <Link to="/signin">GO HOME</Link>
       <HeaderHome />
-      <button className="homepage__searchBtn">
-      <Link to="/profile">GO TO PROFILE</Link>
-        </button>
-      {/* Searchbar Section */}
-      <div className="homepage__searchSection">
-        <button className="homepage__searchBtn" onClick={handleClick}>
-          SEARCH
-        </button>
-        <input
-          className="homepage__searchInput"
-          type="text"
-          onChange={handleInputChange}
-          value={search}
-          placeholder="Start typing a movie or tv show name..."
-        ></input>
-      </div>
-      {/* Main Container with Search Results and Favorites Sections */}
-      <div className="main">
-        {/* Search Results Section */}
-        <div className="main__searchresults">
-          <div className="main__movieresult"></div>
-          <div className="main__movieRating"></div>
-        </div>
-        {/* Favorites Section */}
-        <div className="main__favorites">
-          <h1 className="main__favoritesH1">Your Favorites</h1>
-        </div>
-      {/* NO RESULTS, DISPLAY BELOW*/}
-      {!results ?         
-        <div className="homepage__card">
-          <div className="homepage__cardBody">
-            <p>
-              Search for a Movie!
-            </p>
+      {/* <Link className="homepage__profileBtn" to="/profile">
+        GO TO PROFILE
+      </Link> */}
+      <div className="homepage__main">
+        {/* Searchbar Section */}
+        <div className="homepage__searchSection">
+          <h1 className="searchfor__h1">Search for a Movie or TV Show</h1>
+          <div className="homepage__searchBarandBtn">
+            <button className="homepage__searchBtn" onClick={handleClick}>
+              SEARCH
+            </button>
+            <input
+              className="homepage__searchInput"
+              type="text"
+              onChange={handleInputChange}
+              value={search}
+              placeholder="Start typing a movie or tv show name..."
+            ></input>
           </div>
-        </div> 
-        : 
+          <div className="main__searchresults">
+            {/* NO RESULTS, DISPLAY BELOW*/}
+            {!results ? (
+              <div className="homepage__card">
+                <div className="homepage__cardBody">
+                  <p>Search for a Movie!</p>
+                </div>
+              </div>
+            ) : (
+              // IF THERE ARE RESULTS RETURN BELOW
+              <div className="movieResults__div">
+                <div className="movieinfo__div">
+                  <h1 className="movietitle__h1">{results.Title}MOVIE TITLE</h1>
+                  <img
+                    className="movieinfo__img"
+                    src={results.Poster}
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <p>Genre: {results.Genre}</p>
+                  <p>Plot: {results.Plot}</p>
+                </div>
 
-        // IF THERE ARE RESULTS RETURN BELOW
-        <div className="homepage__card">
-          <h1>{results.Title}</h1>
-          <img
-            className="homepage__cardImg"
-            src={results.Poster}
-            class="card-img-top"
-            alt="..."
-          />
-          <div className="homepage__cardBody">
-            <h2>Genre: {results.Genre}</h2>
-            <p>
-              {results.Plot}
-            </p>
-            <h3>Burnt Meter</h3>
-            <h4>Leave a Review:</h4>
-            {/*Change this text area for the ratings box if needed */}
-            <textarea></textarea>
+                <div className="movieinfo__review">
+                  <h1 className="moviereview__h1">Rate the Movie or TV Show</h1>
+
+                  <div className="moviereview__burntmetersection">
+                    <h2 className="burntmeter__h2">Burnt Meter</h2>
+                    <input
+                      type="range"
+                      min="1"
+                      max="10"
+                      value="10"
+                      className="burntmeter__slider"
+                      id="myRange"
+                    />
+                  </div>
+
+                  <h3>Leave a Review:</h3>
+                  {/*Change this text area for the ratings box if needed */}
+                  <textarea></textarea>
+                  <button className="homepage__searchBtn">
+                    ADD YOUR REVIEW
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
-        <button className="homepage__searchBtn">
-          ADD YOUR REVIEW
-        </button>
         </div>
-      }
+        <div className="homepage__favortiesSection">
+          <h1 className="favorites__h1">Your Favorites</h1>
+        </div>
       </div>
     </div>
   );
