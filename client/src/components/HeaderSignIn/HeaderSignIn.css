@@ -17,6 +17,7 @@
   background-color: #fdcf05;
   border-radius: 10px;
   font-family: "Hanken-Book";
+  text-decoration: none;
 }
 
 .header__signinBtn:hover {
