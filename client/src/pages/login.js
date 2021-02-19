@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import "./login.css";
 import LoginForm from "../components/loginForm";
 import HeaderLogin from "../components/HeaderLogin";
+import Footer from "../components/Footer";
 
 function LogIn() {
   return (
@@ -10,6 +11,7 @@ function LogIn() {
       <Link to="/">GO TO MAIN</Link>
       <HeaderLogin />
       <LoginForm />
+      <Footer />
     </div>
   );
 }
