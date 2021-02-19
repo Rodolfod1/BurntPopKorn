@@ -80,8 +80,12 @@ function Home() {
             </p>
             <h3>Burnt Meter</h3>
             <h4>Leave a Review:</h4>
-            {/*Add an input box and button here*/}
+            {/*Change this text area for the ratings box if needed */}
+            <textarea></textarea>
           </div>
+        <button className="homepage__searchBtn">
+          ADD YOUR REVIEW
+        </button>
         </div>
       }
       </div>
