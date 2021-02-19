@@ -12,7 +12,10 @@ function Home() {
   const [results, setResults] = useState([]);
 
   const handleClick = (event) => {
-    API.getOMDb(search).then((moviedata) => console.log(moviedata));
+    API.getOMDb(search).then((moviedata) => {
+      setResults(moviedata.data)
+      setSearch("");
+    });
   };
 
   const handleInputChange = (event) => {
@@ -50,6 +53,37 @@ function Home() {
         <div className="main__favorites">
           <h1 className="main__favoritesH1">Your Favorites</h1>
         </div>
+      {/* NO RESULTS, DISPLAY BELOW*/}
+      {!results ?         
+        <div className="homepage__card">
+          <div className="homepage__cardBody">
+            <p>
+              Search for a Movie!
+            </p>
+          </div>
+        </div> 
+        : 
+
+        // IF THERE ARE RESULTS RETURN BELOW
+        <div className="homepage__card">
+          <h1>{results.Title}</h1>
+          <img
+            className="homepage__cardImg"
+            src={results.Poster}
+            class="card-img-top"
+            alt="..."
+          />
+          <div className="homepage__cardBody">
+            <h2>Genre: {results.Genre}</h2>
+            <p>
+              {results.Plot}
+            </p>
+            <h3>Burnt Meter</h3>
+            <h4>Leave a Review:</h4>
+            {/*Add an input box and button here*/}
+          </div>
+        </div>
+      }
       </div>
     </div>
   );
