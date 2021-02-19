@@ -1,22 +1,3 @@
-@font-face {
-  font-family: "FVAlmeloRegular";
-  src: url("../fonts/fv_almelo-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Hanken-Book";
-  src: url("../fonts/Hanken-Book.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-
-* {
-  font-family: "Hanken-Book";
-  font-size: 16px;
-}
-
 /* Styling for Search Bar Section */
 .homepage__searchSection {
   display: flex;

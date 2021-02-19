@@ -11,20 +11,6 @@
   width: 400px;
 }
 
-.header__signinBtn {
-  padding: 10px 20px;
-  margin: 20px;
-  background-color: #fdcf05;
-  border-radius: 10px;
-  font-family: "Hanken-Book";
-  text-decoration: none;
-  font-size: 16px;
-}
-
-.header__signinBtn:hover {
-  cursor: pointer;
-}
-
 /* Styling for mobile devices */
 
 @media only screen and (max-width: 768px) {

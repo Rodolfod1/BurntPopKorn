@@ -1,54 +1,78 @@
-@font-face {
+.loginForm__main {
+  background: url(../components/images/iStock-869302366.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 174.3px);
+}
+
+.loginForm__section {
+  float: right;
+  width: 600px;
+  margin: 75px 75px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.login__h1 {
+  color: #fdcf05;
+  text-align: center;
   font-family: "FVAlmeloRegular";
-  src: url("../fonts/fv_almelo-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+  font-size: 48px;
+  margin: 20px 0px;
 }
 
-@font-face {
-  font-family: "Hanken-Book";
-  src: url("../fonts/Hanken-Book.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
+.login__p {
+  color: #ffffff;
+  text-align: center;
+  font-size: 24px;
+  margin: 20px 0px;
 }
 
-* {
+.loginform__button {
+  padding: 10px 20px;
+  border-radius: 10px;
   font-family: "Hanken-Book";
+  background-color: #fdcf05;
+  margin: 10px;
   font-size: 16px;
 }
 
-.header {
-  width: 100%;
-  background-color: #000000;
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header__logo {
-  width: 400px;
-}
-
-.heading__homeBtn {
-  padding: 10px 20px;
-  margin: 20px;
-  background-color: #fdcf05;
-  border-radius: 10px;
-  font-family: "Hanken-Book";
-}
-
-.heading__homeBtn:hover {
+.loginform__button:hover {
   cursor: pointer;
+}
+
+.loginform__input {
+  font-family: "Hanken-Book";
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 15px 0px 5px 10px;
+  border: none;
+  border-radius: 5px;
+  width: 60%;
 }
 
 /* Styling for mobile devices */
 
 @media only screen and (max-width: 768px) {
-  .header__logo {
-    width: 300px;
+  .loginForm__main {
+    background: none;
   }
-  .header {
-    border-bottom: 2px solid #fdcf05;
+
+  .loginForm__section {
+    clear: right;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+  }
+
+  .loginForm {
+    margin-top: 25px;
   }
 }

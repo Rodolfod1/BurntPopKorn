@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { AuthContext } from '../../authentication/AuthContext';
+import { AuthContext } from "../../authentication/AuthContext";
 import { AuthService } from "../../authentication/AuthService";
 
 function LoginForm() {
@@ -10,54 +10,56 @@ function LoginForm() {
   const [message, setMessage] = useState(null);
   const history = useHistory();
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    const user = {username: usernameRef.current.value, password: passwordRef.current.value}
+    const user = {
+      username: usernameRef.current.value,
+      password: passwordRef.current.value,
+    };
 
-    AuthService.login(user)
-    .then(data => {
-      console.log(data)
+    AuthService.login(user).then((data) => {
+      console.log(data);
       const { isAuthenticated, user, message } = data;
-      if(isAuthenticated) {
+      if (isAuthenticated) {
         authContext.setUser(user);
         authContext.setIsAuthenticated(isAuthenticated);
-        history.push('/');
-        
+        history.push("/");
       } else {
-        setMessage(message)
+        setMessage(message);
       }
-    })
-  }
-
-
+    });
+  };
 
   return (
-
-    <div class="loginForm__section">
+    <div className="loginForm__main">
+      <div class="loginForm__section">
+        <h1 className="login__h1">Log In to Your Account</h1>
+        <p className="login__p">
+          Enter your username and password <br /> to log in to your account.
+        </p>
         <form className="loginForm" onSubmit={onSubmit}>
-        
-        <label htmlFor="uname"></label>
-        <input
+          <label htmlFor="uname"></label>
+          <input
             className="loginform__input"
             type="text"
             id="uname"
             name="uname"
             placeholder="Username"
             ref={usernameRef}
-        />
+          />
 
-
-        <label htmlFor="password"></label>
-        <input
+          <label htmlFor="password"></label>
+          <input
             className="loginform__input"
             type="password"
             id="password"
             name="password"
             placeholder="Password"
             ref={passwordRef}
-        />
-        <input className="loginform__button" type="submit" value="LOGIN" />
+          />
+          <input className="loginform__button" type="submit" value="LOG IN" />
         </form>
+      </div>
     </div>
   );
 }
