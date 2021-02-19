@@ -1,7 +1,25 @@
+.homepage__main {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Styling for Search Bar Section */
 .homepage__searchSection {
   display: flex;
+  flex-direction: column;
   margin: 40px;
+  width: 60%;
+  /* border: 1px solid #00aceb; */
+}
+
+.searchfor__h1 {
+  color: #00aceb;
+  font-family: "FVAlmeloRegular";
+  font-size: 48px;
+}
+
+.homepage__searchBarandBtn {
+  margin: 30px 0;
 }
 
 .homepage__searchBtn {
@@ -10,6 +28,7 @@
   background-color: #00aceb;
   border-radius: 10px;
   font-family: "Hanken-Book";
+  font-size: 16px;
 }
 
 .homepage__searchBtn:hover {
@@ -17,24 +36,90 @@
 }
 
 .homepage__searchInput {
-  width: 40%;
   padding: 8px;
   margin: 0px;
   font-family: "Hanken-Book";
   font-size: 16px;
+  width: 85%;
 }
 
-/* Styling for Main Div */
-.main {
-  display: flex;
-}
 /* Styling for Search Results Div */
 .main__searchresults {
   border: 1px solid #00aceb;
+  background-color: #00aceb;
   border-radius: 5px;
+  padding: 20px;
 }
-/* Styling for Favorites Div */
-.main__favoritesH1 {
+
+/* Styling for the movie results div */
+.movieResults__div {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Movie Info Section */
+.movieinfo__div {
+  width: 50%;
+}
+
+.movietitle__h1 {
+  color: #ffffff;
   font-family: "FVAlmeloRegular";
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Styling for the movie review div */
+.movieinfo__review {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.moviereview__h1 {
+  color: #ffffff;
+  font-family: "FVAlmeloRegular";
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Styling for the Burnt Meter section */
+.moviereview__burntmetersection {
+  margin: 20px 0;
+}
+
+.burntmeter__h2 {
+  color: #ffffff;
+}
+
+.burntmeter__slider {
+  width: 100%;
+}
+
+/* Styling for Favorites Section */
+.homepage__favortiesSection {
+  margin: 40px;
+  text-align: right;
+  /* border: 1px solid #ee1d24; */
+}
+.favorites__h1 {
   color: #ee1d24;
+  font-family: "FVAlmeloRegular";
+  font-size: 48px;
+}
+
+/* Profile Button Styling */
+.homepage__profileBtn {
+  padding: 10px 20px;
+  margin: 0 5px;
+  background-color: #00aceb;
+  border-radius: 10px;
+  font-family: "Hanken-Book";
+  font-size: 16px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.homepage__profileBtn:hover {
+  cursor: pointer;
 }
