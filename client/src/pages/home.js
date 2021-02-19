@@ -29,6 +29,9 @@ function Home() {
       {/* Header Section */}
       <Link to="/signin">GO HOME</Link>
       <HeaderHome />
+      <button className="homepage__searchBtn">
+      <Link to="/profile">GO TO PROFILE</Link>
+        </button>
       {/* Searchbar Section */}
       <div className="homepage__searchSection">
         <button className="homepage__searchBtn" onClick={handleClick}>
