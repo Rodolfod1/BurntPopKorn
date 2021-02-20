@@ -11,7 +11,7 @@ import "./home.css";
 function SignIn() {
   return (
     <div className="signinpage__container">
-      <Link to="/">GO TO MAIN</Link>
+      <Link to="/home">GO TO MAIN</Link>
       <HeaderSignIn />
       <SignInForm />
       <Footer />

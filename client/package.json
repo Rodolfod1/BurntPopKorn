@@ -1,6 +1,5 @@
 {
-  "proxy": "http://localhost:3001",
-  "name": "burtpopkorn",
+  "name": "burntpopkorn",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
