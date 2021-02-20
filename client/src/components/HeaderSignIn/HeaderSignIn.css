@@ -12,13 +12,13 @@
 }
 
 .header__signinBtn {
-  padding: 10px 20px;
+  padding: 15px 20px 10px 20px;
   margin: 20px;
   background-color: #fdcf05;
   border-radius: 10px;
   font-family: "Hanken-Book";
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .header__signinBtn:hover {
