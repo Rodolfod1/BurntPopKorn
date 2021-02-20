@@ -15,44 +15,45 @@ function Home() {
   const [results, setResults] = useState([]);
   const [movies, setMovies] = useState([]);
   const reviewRef = useRef();
-  const {user, setUser, isAuthenticated, setIsAuthenticated} = useContext(AuthContext);
-
+  const { user, setUser, isAuthenticated, setIsAuthenticated } = useContext(
+    AuthContext
+  );
 
   useEffect(() => {
-    MovieService.getMovies().then(data => {
-      if(isAuthenticated) {
-        setMovies(data.movies)
+    MovieService.getMovies().then((data) => {
+      if (isAuthenticated) {
+        setMovies(data.movies);
       }
     });
   }, []);
 
-
-  const handleAddReview = e => {
-    if(!isAuthenticated) {
-      return
+  const handleAddReview = (e) => {
+    if (!isAuthenticated) {
+      return;
     }
     const movieObj = {
       title: results.Title,
       genre: results.Genre,
       poster: results.Poster,
       plot: results.Plot,
-      review: reviewRef.current.value
-    }
-    MovieService.postMovie(movieObj).then(data => {
-      const {message} = data;
+      review: reviewRef.current.value,
+    };
+    MovieService.postMovie(movieObj)
+      .then((data) => {
+        const { message } = data;
 
-      if (!message.msgError) {
-        MovieService.getMovies().then(getData => {
-          console.log(getData.movies);
-          setMovies(getData.movies)
-        })
-      }
-      console.log(data);
-    }).catch(err => {
-      console.log(err);
-    })
-  }
-
+        if (!message.msgError) {
+          MovieService.getMovies().then((getData) => {
+            console.log(getData.movies);
+            setMovies(getData.movies);
+          });
+        }
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const handleClick = (event) => {
     API.getOMDb(search).then((moviedata) => {
@@ -76,11 +77,9 @@ function Home() {
         GO TO PROFILE
       </Link> */}
 
-      <div className="greeting">
+      {/* <div className="greeting">
         <p>HELLO {user.username}</p>
-        {/* <p>HELLO, USERNAME</p> */}
-      </div>
-
+      </div> */}
 
       <div className="homepage__main">
         {/* Searchbar Section */}
@@ -139,7 +138,10 @@ function Home() {
                   <h3>Leave a Review:</h3>
                   {/*Change this text area for the ratings box if needed */}
                   <textarea ref={reviewRef}></textarea>
-                  <button onClick={handleAddReview} className="homepage__searchBtn">
+                  <button
+                    onClick={handleAddReview}
+                    className="homepage__searchBtn"
+                  >
                     ADD YOUR REVIEW
                   </button>
                 </div>
@@ -150,13 +152,10 @@ function Home() {
         <div className="homepage__favortiesSection">
           <h1 className="favorites__h1">Your Favorites</h1>
           <ul>
-            {
-              movies.map(movie => {
-                return <MovieItem key={movie._id} movie={movie}/>
-              })
-            }
+            {movies.map((movie) => {
+              return <MovieItem key={movie._id} movie={movie} />;
+            })}
           </ul>
-
         </div>
       </div>
     </div>
