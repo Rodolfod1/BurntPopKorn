@@ -59,6 +59,14 @@ function LoginForm() {
           />
           <input className="loginform__button" type="submit" value="LOG IN" />
         </form>
+        <div className="loginform__createaccountsection">
+          <p> Don't have an account? Create one now!</p>
+          <button className="loginform__createaccountBtn">
+            <Link className="loginform__createaccountBtnLink" to="/">
+              CREATE ACCOUNT
+            </Link>
+          </button>
+        </div>
       </div>
     </div>
   );
