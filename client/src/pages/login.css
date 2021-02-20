@@ -36,12 +36,12 @@
 }
 
 .loginform__button {
-  padding: 10px 20px;
+  padding: 15px 20px 10px 20px;
   border-radius: 10px;
   font-family: "Hanken-Book";
   background-color: #fdcf05;
   margin: 10px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .loginform__button:hover {
@@ -50,7 +50,7 @@
 
 .loginform__input {
   font-family: "Hanken-Book";
-  font-size: 16px;
+  font-size: 18px;
   margin: 10px 0;
   padding: 15px 0px 5px 10px;
   border: none;
@@ -61,7 +61,7 @@
 .loginform__createaccountsection {
   text-align: center;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 20px;
   margin: 50px 0;
 }
 
@@ -71,7 +71,7 @@
   font-family: "Hanken-Book";
   background-color: #fdcf05;
   margin: 15px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .loginform__createaccountBtnLink {

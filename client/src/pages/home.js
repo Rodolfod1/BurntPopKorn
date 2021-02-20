@@ -5,7 +5,6 @@ import API from "../utils/api";
 import HeaderHome from "../components/HeaderHome";
 import "../components/HeaderHome/HeaderHome.css";
 import "./home.css";
-import { Link } from "react-router-dom";
 import MovieItem from "../components/MovieItem";
 
 //setState for title searches
@@ -72,15 +71,7 @@ function Home() {
   return (
     <div className="homepage__container">
       {/* Header Section */}
-      <Link to="/">GO HOME</Link>
       <HeaderHome />
-      {/* <Link className="homepage__profileBtn" to="/profile">
-        GO TO PROFILE
-      </Link> */}
-
-      {/* <div className="greeting">
-        <p>HELLO {user.username}</p>
-      </div> */}
 
       <div className="homepage__main">
         {/* Searchbar Section */}
@@ -101,34 +92,43 @@ function Home() {
           <div className="main__searchresults">
             {/* NO RESULTS, DISPLAY BELOW*/}
             {!results ? (
-              <div className="homepage__card">
-                <div className="homepage__cardBody">
-                  <p>Search for a Movie!</p>
-                </div>
+              <div className="searchresults__noresultsSection">
+                <p>Search for a Movie!</p>
               </div>
             ) : (
               // IF THERE ARE RESULTS RETURN BELOW
               <div className="movieResults__div">
                 <div className="movieinfo__div">
-                  <h1 className="movietitle__h1">{results.Title}</h1>
+                  <h2 className="movietitle__heading">{results.Title}</h2>
                   <img
                     className="movieinfo__img"
                     src={results.Poster}
                     class="card-img-top"
                     alt="..."
                   />
-                  <h3 className="movieinfo__heading">
-                    Rating: {results.Rated}
-                  </h3>
-                  <h3 className="movieinfo__heading">
-                    Release Date: {results.Released}
-                  </h3>
-                  <h3 className="movieinfo__heading">Genre: {results.Genre}</h3>
-                  <h3 className="movieinfo__heading">Plot: {results.Plot}</h3>
+                  <div className="movieinfo__rating">
+                    {" "}
+                    <h4 className="movieinfo__heading">Rating:</h4>
+                    <span className="movieinfo__span">{results.Rated}</span>
+                  </div>
+
+                  <div className="movieinfo__releasedate">
+                    <h4 className="movieinfo__heading">Release Date:</h4>
+                    <span className="movieinfo__span">{results.Released}</span>
+                  </div>
+
+                  <div className="movieinfo__genre">
+                    <h4 className="movieinfo__heading">Genre:</h4>
+                    <span className="movieinfo__span">{results.Genre}</span>
+                  </div>
+                  <div className="movieinfo__plot">
+                    <h4 className="movieinfo__heading">Plot:</h4>
+                    <span className="movieinfo__span">{results.Plot}</span>
+                  </div>
                 </div>
 
                 <div className="movieinfo__review">
-                  <h1 className="moviereview__h1">Rate the Movie or TV Show</h1>
+                  <h1 className="moviereview__h1">Leave Your Rating</h1>
 
                   <div className="moviereview__burntmetersection">
                     <h3 className="moviereview__heading">Burnt Meter</h3>
@@ -144,7 +144,11 @@ function Home() {
 
                   <h3 className="moviereview__heading">Leave a Review:</h3>
                   {/*Change this text area for the ratings box if needed */}
-                  <textarea ref={reviewRef}></textarea>
+                  <textarea
+                    rows="5"
+                    className="moviereview__textarea"
+                    ref={reviewRef}
+                  ></textarea>
                   <button
                     onClick={handleAddReview}
                     className="homepage__addReviewBtn"
