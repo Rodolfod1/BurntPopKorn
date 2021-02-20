@@ -23,7 +23,7 @@ function LoginForm() {
       if (isAuthenticated) {
         authContext.setUser(user);
         authContext.setIsAuthenticated(isAuthenticated);
-        history.push("/");
+        history.push("/home");
       } else {
         setMessage(message);
       }

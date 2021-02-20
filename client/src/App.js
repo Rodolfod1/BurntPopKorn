@@ -20,10 +20,10 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/signin">
             <SignIn />
+          </Route>
+          <Route exact path="/home">
+            <Home />
           </Route>
           <Route exact path="/login">
             <LogIn />

@@ -71,7 +71,7 @@ function Home() {
   return (
     <div className="homepage__container">
       {/* Header Section */}
-      <Link to="/signin">GO HOME</Link>
+      <Link to="/">GO HOME</Link>
       <HeaderHome />
       {/* <Link className="homepage__profileBtn" to="/profile">
         GO TO PROFILE

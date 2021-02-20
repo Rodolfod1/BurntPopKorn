@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 function LogIn() {
   return (
     <div className="login__container">
-      <Link to="/">GO TO MAIN</Link>
+      <Link to="/home">GO TO MAIN</Link>
       <HeaderLogin />
       <LoginForm />
       <Footer />
