@@ -40,7 +40,7 @@
   margin: 0px;
   font-family: "Hanken-Book";
   font-size: 16px;
-  width: 85%;
+  width: 40%;
 }
 
 /* Styling for Search Results Div */
@@ -69,6 +69,11 @@
   margin-bottom: 20px;
 }
 
+.movieinfo__heading {
+  color: #ffffff;
+  margin: 20px 0;
+}
+
 /* Styling for the movie review div */
 .movieinfo__review {
   display: flex;
@@ -88,12 +93,22 @@
   margin: 20px 0;
 }
 
-.burntmeter__h2 {
+.moviereview__heading {
   color: #ffffff;
+  margin-bottom: 10px;
 }
 
 .burntmeter__slider {
   width: 100%;
+}
+
+.homepage__addReviewBtn {
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #00aceb;
+  border-radius: 10px;
+  font-family: "Hanken-Book";
+  font-size: 16px;
 }
 
 /* Styling for Favorites Section */

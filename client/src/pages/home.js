@@ -86,9 +86,6 @@ function Home() {
         <div className="homepage__searchSection">
           <h1 className="searchfor__h1">Search for a Movie or TV Show</h1>
           <div className="homepage__searchBarandBtn">
-            <button className="homepage__searchBtn" onClick={handleClick}>
-              SEARCH
-            </button>
             <input
               className="homepage__searchInput"
               type="text"
@@ -96,6 +93,9 @@ function Home() {
               value={search}
               placeholder="Start typing a movie or tv show name..."
             ></input>
+            <button className="homepage__searchBtn" onClick={handleClick}>
+              SEARCH
+            </button>
           </div>
           <div className="main__searchresults">
             {/* NO RESULTS, DISPLAY BELOW*/}
@@ -116,31 +116,31 @@ function Home() {
                     class="card-img-top"
                     alt="..."
                   />
-                  <p>Genre: {results.Genre}</p>
-                  <p>Plot: {results.Plot}</p>
+                  <h3 className="movieinfo__heading">Genre: {results.Genre}</h3>
+                  <h3 className="movieinfo__heading">Plot: {results.Plot}</h3>
                 </div>
 
                 <div className="movieinfo__review">
                   <h1 className="moviereview__h1">Rate the Movie or TV Show</h1>
 
                   <div className="moviereview__burntmetersection">
-                    <h2 className="burntmeter__h2">Burnt Meter</h2>
+                    <h3 className="moviereview__heading">Burnt Meter</h3>
                     <input
                       type="range"
                       min="1"
                       max="10"
-                      value="10"
+                      value="5"
                       className="burntmeter__slider"
                       id="myRange"
                     />
                   </div>
 
-                  <h3>Leave a Review:</h3>
+                  <h3 className="moviereview__heading">Leave a Review:</h3>
                   {/*Change this text area for the ratings box if needed */}
                   <textarea ref={reviewRef}></textarea>
                   <button
                     onClick={handleAddReview}
-                    className="homepage__searchBtn"
+                    className="homepage__addReviewBtn"
                   >
                     ADD YOUR REVIEW
                   </button>
