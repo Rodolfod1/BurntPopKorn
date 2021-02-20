@@ -42,6 +42,22 @@
   width: 40%;
 }
 
+/* Styling for empty search screen */
+.searchresults__noresultsSection {
+  display: flex;
+  margin: 50px 0;
+  align-items: center;
+}
+
+.noresultsSection__popcornimg {
+  width: 200px;
+}
+.noresultsSection__heading {
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
 /* Styling for Search Results Div */
 .main__searchresults {
 }
@@ -66,7 +82,7 @@
 .movieinfo__releasedate,
 .movieinfo__genre,
 .movieinfo__plot {
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .movietitle__heading {
@@ -103,39 +119,57 @@
   margin-bottom: 20px;
 }
 
-/* Styling for the Burnt Meter section */
-.moviereview__burntmetersection {
-  margin: 20px 0;
-}
-
 .moviereview__heading {
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 24px;
+  text-decoration: underline;
+}
+
+/* Styling for the Burnt Meter section */
+.moviereview__burntmetersection {
+  padding: 20px 0 40px 0;
 }
 
 .burntmeter__slider {
   width: 100%;
 }
 
-/* Styling for the review textarea section */
+/* Styling for the movie review textarea section */
+.moviereview__reviewsection {
+  padding: 20px 0 60px 0;
+}
+
 .moviereview__textarea {
   padding: 10px;
   font-size: 18px;
   font-family: "Hanken-Book";
+  width: 95%;
+  margin-bottom: 15px;
 }
 
 .homepage__addReviewBtn {
-  padding: 10px 20px;
-  margin: 10px 0;
-  background-color: #00aceb;
+  padding: 15px 20px 10px 20px;
+  background-color: #000000;
+  color: #ffffff;
   border-radius: 10px;
   font-family: "Hanken-Book";
   font-size: 16px;
 }
 
-/* Styling for Favorites Section */
-.homepage__favortiesSection {
+/* Styling for the favorites section */
+.moviereview__favoritesLabel {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.moviereview__favoritesBtn {
+  width: 5%;
+  height: 1.5em;
+}
+
+/* Styling for Reviews Section */
+.homepage__reviewSection {
   margin: 40px;
   text-align: right;
   /* border: 1px solid #ee1d24; */
