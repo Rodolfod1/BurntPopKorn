@@ -3,9 +3,11 @@ import { MovieService } from "../authentication/MovieService";
 import { AuthContext } from "../authentication/AuthContext";
 import API from "../utils/api";
 import HeaderHome from "../components/HeaderHome";
+// import Footer from "../components/Footer";
 import "../components/HeaderHome/HeaderHome.css";
 import "./home.css";
 import MovieItem from "../components/MovieItem";
+import popcorn from "../components/images/spiltpopcorn.png";
 
 //setState for title searches
 
@@ -93,7 +95,15 @@ function Home() {
             {/* NO RESULTS, DISPLAY BELOW*/}
             {!results ? (
               <div className="searchresults__noresultsSection">
-                <p>Search for a Movie!</p>
+                <p className="noresultsSection__heading">
+                  Looks like there's nothing to see here yet! <br />
+                  Use the search bar above to find a movie or TV show.
+                </p>
+                <img
+                  className="noresultsSection__popcornimg"
+                  src={popcorn}
+                  alt="spiltpopcorn"
+                />
               </div>
             ) : (
               // IF THERE ARE RESULTS RETURN BELOW
@@ -142,26 +152,45 @@ function Home() {
                     />
                   </div>
 
-                  <h3 className="moviereview__heading">Leave a Review:</h3>
-                  {/*Change this text area for the ratings box if needed */}
-                  <textarea
-                    rows="5"
-                    className="moviereview__textarea"
-                    ref={reviewRef}
-                  ></textarea>
-                  <button
-                    onClick={handleAddReview}
-                    className="homepage__addReviewBtn"
-                  >
-                    ADD YOUR REVIEW
-                  </button>
+                  <div className="moviereview__reviewsection">
+                    <h3 className="moviereview__heading">Leave a Review</h3>
+                    <textarea
+                      rows="5"
+                      className="moviereview__textarea"
+                      ref={reviewRef}
+                      placeholder="Add your movie review here."
+                    ></textarea>
+                    <button
+                      onClick={handleAddReview}
+                      className="homepage__addReviewBtn"
+                    >
+                      ADD YOUR REVIEW
+                    </button>
+                  </div>
+
+                  <div className="moviereview__addtofavortiessection">
+                    <h3 className="moviereview__heading">Add to Favorites</h3>
+                    <input
+                      className="moviereview__favoritesBtn"
+                      type="checkbox"
+                      id="favorites"
+                      name="favorites"
+                      value="favorite"
+                    />
+                    <label
+                      className="moviereview__favoritesLabel"
+                      for="favorites"
+                    >
+                      &nbsp;Add this movie/TV show to my favorites.
+                    </label>
+                  </div>
                 </div>
               </div>
             )}
           </div>
         </div>
-        <div className="homepage__favortiesSection">
-          <h1 className="favorites__h1">Your Favorites</h1>
+        <div className="homepage__reviewSection">
+          <h1 className="favorites__h1">Your Reviews</h1>
           <ul>
             {movies.map((movie) => {
               return <MovieItem key={movie._id} movie={movie} />;
