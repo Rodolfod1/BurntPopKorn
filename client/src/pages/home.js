@@ -110,13 +110,19 @@ function Home() {
               // IF THERE ARE RESULTS RETURN BELOW
               <div className="movieResults__div">
                 <div className="movieinfo__div">
-                  <h1 className="movietitle__h1">{results.Title}MOVIE TITLE</h1>
+                  <h1 className="movietitle__h1">{results.Title}</h1>
                   <img
                     className="movieinfo__img"
                     src={results.Poster}
                     class="card-img-top"
                     alt="..."
                   />
+                  <h3 className="movieinfo__heading">
+                    Rating: {results.Rated}
+                  </h3>
+                  <h3 className="movieinfo__heading">
+                    Release Date: {results.Released}
+                  </h3>
                   <h3 className="movieinfo__heading">Genre: {results.Genre}</h3>
                   <h3 className="movieinfo__heading">Plot: {results.Plot}</h3>
                 </div>

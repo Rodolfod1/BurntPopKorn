@@ -7,7 +7,9 @@ function HeaderSignIn() {
     <div className="header">
       <img className="header__logo" src={logo} alt="logo" />
       <button className="header__signinBtn">
-        <Link to="/login">LOG IN</Link>
+        <Link className="header__signinBtnLink" to="/login">
+          LOG IN
+        </Link>
       </button>
     </div>
   );

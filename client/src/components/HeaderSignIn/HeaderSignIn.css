@@ -24,6 +24,10 @@
 .header__signinBtn:hover {
   cursor: pointer;
 }
+.header__signinBtnLink {
+  text-decoration: none;
+  color: #000000;
+}
 
 /* Styling for mobile devices */
 
