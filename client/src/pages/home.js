@@ -12,7 +12,7 @@ import MovieItem from "../components/MovieItem";
 
 function Home() {
   const [search, setSearch] = useState("");
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState(null);
   const [movies, setMovies] = useState([]);
   const reviewRef = useRef();
   const { user, setUser, isAuthenticated, setIsAuthenticated } = useContext(
