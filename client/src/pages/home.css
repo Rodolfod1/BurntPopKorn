@@ -123,3 +123,9 @@
 .homepage__profileBtn:hover {
   cursor: pointer;
 }
+
+
+/* Here's the styling for my stupid greeting */
+.greeting {
+  background-color: white;
+}
