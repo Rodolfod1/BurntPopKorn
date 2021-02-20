@@ -17,6 +17,9 @@ const MovieSchema = new mongoose.Schema({
     ratings: [],
     runtime: {
         type: String
+    },
+    review: {
+        type: String
     }
 })
 
