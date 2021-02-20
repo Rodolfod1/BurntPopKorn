@@ -47,6 +47,7 @@ function Home() {
             console.log(getData.movies);
             setMovies(getData.movies);
           });
+          setResults(null);
         }
         console.log(data);
       })
