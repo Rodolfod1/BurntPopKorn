@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../components/HeaderSignIn/HeaderSignIn.css";
 import "../components/Footer/Footer.css";
 import "../components/signinForm/SignInForm.css";
@@ -11,7 +10,6 @@ import "./home.css";
 function SignIn() {
   return (
     <div className="signinpage__container">
-      <Link to="/home">GO TO MAIN</Link>
       <HeaderSignIn />
       <SignInForm />
       <Footer />

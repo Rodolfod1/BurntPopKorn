@@ -62,7 +62,7 @@
   text-align: center;
   color: #ffffff;
   font-size: 18px;
-  margin: 40px 0;
+  margin: 50px 0;
 }
 
 .loginform__createaccountBtn {
@@ -70,7 +70,7 @@
   border-radius: 10px;
   font-family: "Hanken-Book";
   background-color: #fdcf05;
-  margin: 10px;
+  margin: 15px;
   font-size: 16px;
 }
 
