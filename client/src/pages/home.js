@@ -8,6 +8,7 @@ import "../components/HeaderHome/HeaderHome.css";
 import "./home.css";
 import MovieItem from "../components/MovieItem";
 import popcorn from "../components/images/spiltpopcorn.png";
+import Rater from "../components/Rater"
 
 //setState for title searches
 
@@ -142,14 +143,7 @@ function Home() {
 
                   <div className="moviereview__burntmetersection">
                     <h3 className="moviereview__heading">Burnt Meter</h3>
-                    <input
-                      type="range"
-                      min="1"
-                      max="10"
-                      value="5"
-                      className="burntmeter__slider"
-                      id="myRange"
-                    />
+                    <Rater />
                   </div>
 
                   <div className="moviereview__reviewsection">

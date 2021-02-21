@@ -9,7 +9,9 @@
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "react": "^17.0.1",
+    "react-css-themr": "^2.1.2",
     "react-dom": "^17.0.1",
+    "react-rater-plus": "^0.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
     "web-vitals": "^1.1.0"
