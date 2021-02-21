@@ -15,12 +15,15 @@ import Rater from "../components/Rater"
 function Home() {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState(null);
+  const [userRating, setUserRating] = useState(10);
   const [movies, setMovies] = useState([]);
   const reviewRef = useRef();
+  const favoriteRef = useRef();
   const { user, setUser, isAuthenticated, setIsAuthenticated } = useContext(
     AuthContext
   );
 
+  // This loads the current user's saved movies
   useEffect(() => {
     MovieService.getMovies().then((data) => {
       if (isAuthenticated) {
@@ -28,6 +31,12 @@ function Home() {
       }
     });
   }, []);
+
+  // This is passed to the Rater component to save our rating
+  const handleRate = (event) => {
+    setUserRating(event)
+    console.log(event)
+  }
 
   const handleAddReview = (e) => {
     if (!isAuthenticated) {
@@ -39,7 +48,12 @@ function Home() {
       poster: results.Poster,
       plot: results.Plot,
       review: reviewRef.current.value,
+      userRating: userRating,
+      favorite: favoriteRef.current.checked,
+      rated: results.Rated,
+      releaseDate: results.Released
     };
+    console.log(movieObj);
     MovieService.postMovie(movieObj)
       .then((data) => {
         const { message } = data;
@@ -143,7 +157,7 @@ function Home() {
 
                   <div className="moviereview__burntmetersection">
                     <h3 className="moviereview__heading">Burnt Meter</h3>
-                    <Rater />
+                    <Rater userRating={userRating} handleRate={handleRate}/>
                   </div>
 
                   <div className="moviereview__reviewsection">
@@ -170,6 +184,7 @@ function Home() {
                       id="favorites"
                       name="favorites"
                       value="favorite"
+                      ref={favoriteRef}
                     />
                     <label
                       className="moviereview__favoritesLabel"
