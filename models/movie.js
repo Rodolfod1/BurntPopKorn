@@ -14,11 +14,19 @@ const MovieSchema = new mongoose.Schema({
     plot: {
         type: String
     },
-    ratings: [],
     runtime: {
         type: String
     },
     review: {
+        type: String
+    },
+    userRating: {
+        type: Number
+    },
+    rated: {
+        type: String
+    },
+    releaseDate: {
         type: String
     }
 })
