@@ -1,15 +1,14 @@
 import React from "react";
-import HeaderHome from "../components/HeaderHome";
+import HeaderStats from "../components/HeaderStats";
 import BarGraph from "../components/BarGraph";
 
-
 function Stats() {
-    return (
-        <div>
-            <HeaderHome />
-            <BarGraph />
-        </div>
-    )
+  return (
+    <div>
+      <HeaderStats />
+      <BarGraph />
+    </div>
+  );
 }
 
 export default Stats;

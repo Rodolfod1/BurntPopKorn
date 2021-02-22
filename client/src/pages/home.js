@@ -3,7 +3,6 @@ import { MovieService } from "../authentication/MovieService";
 import { AuthContext } from "../authentication/AuthContext";
 import API from "../utils/api";
 import HeaderHome from "../components/HeaderHome";
-// import Footer from "../components/Footer";
 import "../components/HeaderHome/HeaderHome.css";
 import "./home.css";
 import MovieItem from "../components/MovieItem";
