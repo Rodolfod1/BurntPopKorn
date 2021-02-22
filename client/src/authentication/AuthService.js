@@ -23,8 +23,6 @@ export const AuthService = {
 
         })
 
-
-
     },
     register: user => {
         return fetch('/user/register', {

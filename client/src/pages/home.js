@@ -8,7 +8,8 @@ import "../components/HeaderHome/HeaderHome.css";
 import "./home.css";
 import MovieItem from "../components/MovieItem";
 import popcorn from "../components/images/spiltpopcorn.png";
-import Rater from "../components/Rater"
+import Rater from "../components/Rater";
+import ReviewDisplay from "../components/ReviewDisplay";
 
 //setState for title searches
 
@@ -17,11 +18,12 @@ function Home() {
   const [results, setResults] = useState(null);
   const [userRating, setUserRating] = useState(10);
   const [movies, setMovies] = useState([]);
+  const [currentReview, setCurrentReview] = useState(null);
+
+
   const reviewRef = useRef();
   const favoriteRef = useRef();
-  const { user, setUser, isAuthenticated, setIsAuthenticated } = useContext(
-    AuthContext
-  );
+  const { user, setUser, isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
 
   // This loads the current user's saved movies
   useEffect(() => {
@@ -74,16 +76,32 @@ function Home() {
 
   const handleClick = (event) => {
     API.getOMDb(search).then((moviedata) => {
+      console.log(moviedata.data.Response);
+      
+      if(moviedata.data.Response === "False") {
+        // We should add a message here telling the user that there were no results found
+        // Right now, the form just clears.
+        setResults(null);
+        setSearch("");
+        return;
+      }
       setResults(moviedata.data);
       setSearch("");
     });
   };
 
-  const handleInputChange = (event) => {
+  const handleInputChange = event => {
     const { value } = event.target;
     setSearch(value);
     console.log(value);
   };
+
+  const accessReview = event => {
+    MovieService.getMovieById(event.target.id)
+    .then(data => {
+      setCurrentReview(data);
+    })
+  }
 
   return (
     <div className="homepage__container">
@@ -202,11 +220,18 @@ function Home() {
           <h1 className="favorites__h1">Your Reviews</h1>
           <ul>
             {movies.map((movie) => {
-              return <MovieItem key={movie._id} movie={movie} />;
+              return <MovieItem accessReview={accessReview} key={movie._id} id={movie._id} movie={movie} />;
             })}
           </ul>
         </div>
       </div>
+
+
+      {/* Hi Megan! Here's my sad little component that looks dumb.
+      It will be easy to display more info from the movie if we want. */}
+      {currentReview ? <ReviewDisplay info={currentReview}/> :<></>}
+
+
     </div>
   );
 }

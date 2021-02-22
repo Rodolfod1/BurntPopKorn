@@ -23,5 +23,13 @@ export const MovieService = {
             else
                 return {message: {msgBody: 'UnAuthorized'}, msgError: true};
         })
+    },
+
+    getMovieById: id => {
+        return fetch('/user/getmovie/' + id)
+        .then(response => {
+            return response.json().then(data => data);
+        })
     }
+
 }
