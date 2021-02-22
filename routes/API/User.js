@@ -70,6 +70,14 @@ userRouter.post('/movie', passport.authenticate('jwt', {session : false}), (req,
 });
 
 
+userRouter.get('/getmovie/:id', (req, res, next) => {
+    Movie.findById({_id: req.params.id}, (err, post) => {
+        if (err) return next(err);
+        res.json(post)
+    })
+})
+
+
 userRouter.get('/movies', passport.authenticate('jwt', {session : false}), (req, res) => {
     // Populate gets all the data from movies, not just the ids
     User.findById({_id: req.user._id}).populate('movies').exec((err, document) => {
