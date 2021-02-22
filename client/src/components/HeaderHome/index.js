@@ -3,6 +3,7 @@ import logo from "../images/burntpopkorn logo.png";
 import { AuthService } from "../../authentication/AuthService";
 import { AuthContext } from "../../authentication/AuthContext";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function HeaderHome() {
   const { user, setUser, setIsAuthenticated } = useContext(AuthContext);
@@ -24,7 +25,13 @@ function HeaderHome() {
         <img className="header__logo" src={logo} alt="logo" />
         <div className="header__greetingAndBtn">
           <p className="header__greeting">Welcome, {user.username}!</p>
-          <button onClick={handleLogout} className="heading__button-signout">
+          <button className="header__button-activity">
+            {" "}
+            <Link className="header__activity-link" to="/stats">
+              VIEW ACTIVITY
+            </Link>
+          </button>
+          <button onClick={handleLogout} className="header__button-signout">
             LOG OUT
           </button>
         </div>

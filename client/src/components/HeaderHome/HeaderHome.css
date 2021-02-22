@@ -12,16 +12,33 @@
   width: 400px;
 }
 
-.heading__button-signout {
+.header__button-signout {
   padding: 15px 20px 10px 20px;
-  margin: 20px;
+  margin: 20px 20px 20px 7px;
   background-color: #fdcf05;
   border-radius: 10px;
   font-family: "Hanken-Book";
   font-size: 16px;
 }
 
-.heading__button-signout:hover {
+.header__button-activity {
+  padding: 15px 20px 10px 20px;
+  margin: 20px 7px 20px 20px;
+  background-color: #fdcf05;
+  border-radius: 10px;
+  font-family: "Hanken-Book";
+}
+
+.header__activity-link {
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+}
+
+.header__button-signout:hover {
+  cursor: pointer;
+}
+.header__button-activity:hover {
   cursor: pointer;
 }
 
