@@ -9,6 +9,10 @@ const BarGraph = () => {
         // Get the user's saved movies
         MovieService.getMovies()
         .then(res => {
+            // If no user is logged in, return so page doesn't crash
+            if(res.message.msgError) {
+                return;
+            }
             const labels = [];
             const data = [];
             // Pull out the relevent data
