@@ -216,8 +216,8 @@ function Home() {
           </div>
         </div>
         <div className="homepage__reviewSection">
-          <h1 className="favorites__h1">Your Reviews</h1>
-          <ul>
+          <h1 className="reviews__h1">Your Reviews</h1>
+          <ul className="reviews__list">
             {movies.map((movie) => {
               return (
                 <MovieItem
@@ -225,16 +225,14 @@ function Home() {
                   key={movie._id}
                   id={movie._id}
                   movie={movie}
+                  className="reviews__listItem"
                 />
               );
             })}
           </ul>
+          {currentReview ? <ReviewDisplay info={currentReview} /> : <></>}
         </div>
       </div>
-
-      {/* Hi Megan! Here's my sad little component that looks dumb.
-      It will be easy to display more info from the movie if we want. */}
-      {currentReview ? <ReviewDisplay info={currentReview} /> : <></>}
     </div>
   );
 }
