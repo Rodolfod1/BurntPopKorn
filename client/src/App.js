@@ -3,7 +3,8 @@ import { AuthContext } from "./authentication/AuthContext";
 import Home from "./pages/home";
 import SignIn from "./pages/signIn";
 import LogIn from "./pages/login";
-import Profile from "./pages/profile"
+import Profile from "./pages/profile";
+import Stats from "./pages/stats";
 //import Profile from './pages/profile'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./utils/api";
@@ -31,6 +32,10 @@ function App() {
           <Route exact path="/profile">
             <Profile />
           </Route>
+          <Route exact path="/stats">
+            <Stats />
+          </Route>
+
         </Switch>
       </div>
     </Router>
