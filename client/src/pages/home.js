@@ -9,6 +9,7 @@ import MovieItem from "../components/MovieItem";
 import popcorn from "../components/images/spiltpopcorn.png";
 import Rater from "../components/Rater";
 import ReviewDisplay from "../components/ReviewDisplay";
+import LikertScale from "../components/LikertScale";
 
 //setState for title searches
 
@@ -173,7 +174,11 @@ function Home() {
 
                   <div className="moviereview__burntmetersection">
                     <h3 className="moviereview__heading">Burnt Meter</h3>
-                    <Rater userRating={userRating} handleRate={handleRate} />
+                    {/* <Rater userRating={userRating} handleRate={handleRate} /> */}
+                    <LikertScale
+                      userRating={userRating}
+                      handleRate={handleRate}
+                    />
                   </div>
 
                   <div className="moviereview__reviewsection">

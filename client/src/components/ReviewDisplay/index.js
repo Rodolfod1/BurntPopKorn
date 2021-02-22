@@ -14,7 +14,7 @@ const ReviewDisplay = (props) => {
       </div>
       <div className="selectedreview__div">
         <h4 className="selectedreview__heading">Your Review:</h4>{" "}
-        <span className="selectedreview__span">"{props.info.review}"</span>
+        <span className="selectedreview__span">{props.info.review}</span>
       </div>
     </div>
   );
