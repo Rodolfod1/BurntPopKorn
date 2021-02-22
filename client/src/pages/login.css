@@ -60,9 +60,12 @@
 
 .loginform__createaccountsection {
   text-align: center;
+  margin: 50px 0;
+}
+
+.loginform__createaccountP {
   color: #ffffff;
   font-size: 20px;
-  margin: 50px 0;
 }
 
 .loginform__createaccountBtn {

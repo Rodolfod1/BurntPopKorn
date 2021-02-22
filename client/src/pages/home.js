@@ -20,10 +20,11 @@ function Home() {
   const [movies, setMovies] = useState([]);
   const [currentReview, setCurrentReview] = useState(null);
 
-
   const reviewRef = useRef();
   const favoriteRef = useRef();
-  const { user, setUser, isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const { user, setUser, isAuthenticated, setIsAuthenticated } = useContext(
+    AuthContext
+  );
 
   // This loads the current user's saved movies
   useEffect(() => {
@@ -36,9 +37,9 @@ function Home() {
 
   // This is passed to the Rater component to save our rating
   const handleRate = (event) => {
-    setUserRating(event)
-    console.log(event)
-  }
+    setUserRating(event);
+    console.log(event);
+  };
 
   const handleAddReview = (e) => {
     if (!isAuthenticated) {
@@ -53,7 +54,7 @@ function Home() {
       userRating: userRating,
       favorite: favoriteRef.current.checked,
       rated: results.Rated,
-      releaseDate: results.Released
+      releaseDate: results.Released,
     };
     console.log(movieObj);
     MovieService.postMovie(movieObj)
@@ -77,8 +78,8 @@ function Home() {
   const handleClick = (event) => {
     API.getOMDb(search).then((moviedata) => {
       console.log(moviedata.data.Response);
-      
-      if(moviedata.data.Response === "False") {
+
+      if (moviedata.data.Response === "False") {
         // We should add a message here telling the user that there were no results found
         // Right now, the form just clears.
         setResults(null);
@@ -90,18 +91,17 @@ function Home() {
     });
   };
 
-  const handleInputChange = event => {
+  const handleInputChange = (event) => {
     const { value } = event.target;
     setSearch(value);
     console.log(value);
   };
 
-  const accessReview = event => {
-    MovieService.getMovieById(event.target.id)
-    .then(data => {
+  const accessReview = (event) => {
+    MovieService.getMovieById(event.target.id).then((data) => {
       setCurrentReview(data);
-    })
-  }
+    });
+  };
 
   return (
     <div className="homepage__container">
@@ -118,7 +118,7 @@ function Home() {
               type="text"
               onChange={handleInputChange}
               value={search}
-              placeholder="Start typing a movie or tv show name..."
+              placeholder="Enter a movie or tv show name..."
             ></input>
             <button className="homepage__searchBtn" onClick={handleClick}>
               SEARCH
@@ -129,7 +129,6 @@ function Home() {
             {!results ? (
               <div className="searchresults__noresultsSection">
                 <p className="noresultsSection__heading">
-                  Looks like there's nothing to see here yet! <br />
                   Use the search bar above to find a movie or TV show.
                 </p>
                 <img
@@ -175,7 +174,7 @@ function Home() {
 
                   <div className="moviereview__burntmetersection">
                     <h3 className="moviereview__heading">Burnt Meter</h3>
-                    <Rater userRating={userRating} handleRate={handleRate}/>
+                    <Rater userRating={userRating} handleRate={handleRate} />
                   </div>
 
                   <div className="moviereview__reviewsection">
@@ -220,18 +219,22 @@ function Home() {
           <h1 className="favorites__h1">Your Reviews</h1>
           <ul>
             {movies.map((movie) => {
-              return <MovieItem accessReview={accessReview} key={movie._id} id={movie._id} movie={movie} />;
+              return (
+                <MovieItem
+                  accessReview={accessReview}
+                  key={movie._id}
+                  id={movie._id}
+                  movie={movie}
+                />
+              );
             })}
           </ul>
         </div>
       </div>
 
-
       {/* Hi Megan! Here's my sad little component that looks dumb.
       It will be easy to display more info from the movie if we want. */}
-      {currentReview ? <ReviewDisplay info={currentReview}/> :<></>}
-
-
+      {currentReview ? <ReviewDisplay info={currentReview} /> : <></>}
     </div>
   );
 }
