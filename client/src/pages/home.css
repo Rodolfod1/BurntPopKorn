@@ -58,10 +58,6 @@
   line-height: 1.5;
 }
 
-/* Styling for Search Results Div */
-.main__searchresults {
-}
-
 /* Styling for the movie results div */
 .movieResults__div {
   display: flex;
@@ -80,8 +76,7 @@
 
 .movieinfo__rating,
 .movieinfo__releasedate,
-.movieinfo__genre,
-.movieinfo__plot {
+.movieinfo__genre {
   margin: 20px 0;
 }
 
@@ -122,13 +117,14 @@
 .moviereview__heading {
   color: #ffffff;
   margin-bottom: 20px;
-  font-size: 24px;
-  text-decoration: underline;
+  font-size: 28px;
 }
 
 /* Styling for the Burnt Meter section */
 .moviereview__burntmetersection {
-  padding: 20px 0 40px 0;
+  padding: 40px 0 40px 0;
+  border-bottom: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
 }
 
 .burntmeter__slider {
@@ -137,7 +133,8 @@
 
 /* Styling for the movie review textarea section */
 .moviereview__reviewsection {
-  padding: 20px 0 60px 0;
+  padding: 40px 0 40px 0;
+  border-bottom: 1px solid #ffffff;
 }
 
 .moviereview__textarea {
@@ -158,9 +155,13 @@
 }
 
 /* Styling for the favorites section */
+.moviereview__addtofavortiessection {
+  margin-top: 40px;
+}
+
 .moviereview__favoritesLabel {
   color: #ffffff;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .moviereview__favoritesBtn {
@@ -172,26 +173,14 @@
 .homepage__reviewSection {
   margin: 40px;
   text-align: right;
-  /* border: 1px solid #ee1d24; */
 }
-.favorites__h1 {
+.reviews__h1 {
   color: #ee1d24;
   font-family: "FVAlmeloRegular";
   font-size: 48px;
 }
 
-/* Profile Button Styling */
-.homepage__profileBtn {
-  padding: 10px 20px;
-  margin: 0 5px;
-  background-color: #00aceb;
-  border-radius: 10px;
-  font-family: "Hanken-Book";
-  font-size: 16px;
-  text-decoration: none;
-  color: #000000;
-}
-
-.homepage__profileBtn:hover {
-  cursor: pointer;
+.reviews__list {
+  list-style: none;
+  margin-top: 20px;
 }

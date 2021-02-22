@@ -1,3 +1,15 @@
-li {
-    color: red;
+.reviews__listItem {
+  color: #ffffff;
+  font-size: 20px;
+  padding: 8px 0px;
+}
+
+.reviews__button {
+  padding: 10px 10px 8px 10px;
+  background-color: #ee1d24;
+  color: #000000;
+  border-radius: 10px;
+  font-family: "Hanken-Book";
+  font-size: 14px;
+  margin-left: 20px;
 }

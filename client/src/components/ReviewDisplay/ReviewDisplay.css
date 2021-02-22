@@ -1,4 +1,25 @@
 /* This probably needs more stylin than this, but who am I to judge. */
-p {
-    color: #00aceb;
+.reviews__selectedreview {
+  background-color: #ee1d24;
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 10px 20px;
+  text-align: left;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.selectedreview__div {
+  padding: 10px 0;
+}
+
+.selectedreview__heading {
+  color: #ffffff;
+  text-decoration: underline;
+  font-size: 20px;
+  display: inline;
+}
+
+.selectedreview__span {
+  font-size: 20px;
 }
