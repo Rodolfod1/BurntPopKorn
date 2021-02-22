@@ -1,7 +1,6 @@
 .footer {
   padding: 40px;
   background-color: #000000;
-  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +15,10 @@
   color: #fdcf05;
   font-size: 22px;
   margin: 5px 0;
+}
+
+.footer__p {
+  color: #ffffff;
 }
 
 /* Styling for mobile devices */

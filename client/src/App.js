@@ -5,7 +5,6 @@ import SignIn from "./pages/signIn";
 import LogIn from "./pages/login";
 import Profile from "./pages/profile";
 import Stats from "./pages/stats";
-//import Profile from './pages/profile'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./utils/api";
 import "./index.css";
@@ -35,7 +34,6 @@ function App() {
           <Route exact path="/stats">
             <Stats />
           </Route>
-
         </Switch>
       </div>
     </Router>
