@@ -125,6 +125,8 @@
   padding: 40px 0 40px 0;
   border-bottom: 1px solid #ffffff;
   border-top: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 20px;
 }
 
 .burntmeter__slider {
