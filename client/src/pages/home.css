@@ -133,6 +133,37 @@
   width: 100%;
 }
 
+.moviereview__explanation {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.likerScale__burnt {
+  width: 55px;
+  margin-left: 20px;
+}
+
+.likerScale__kernel {
+  width: 40px;
+  margin-left: 48px;
+}
+
+.likerScale__whitepopcorn {
+  width: 55px;
+  margin-left: 46px;
+}
+
+.likerScale__slightlybuttered {
+  width: 55px;
+  margin-left: 42px;
+}
+
+.likerScale__buttered {
+  width: 55px;
+  margin-left: 41px;
+}
+
 /* Styling for the movie review textarea section */
 .moviereview__reviewsection {
   padding: 40px 0 40px 0;
