@@ -10,6 +10,11 @@ import popcorn from "../components/images/spiltpopcorn.png";
 import Rater from "../components/Rater";
 import ReviewDisplay from "../components/ReviewDisplay";
 import LikertScale from "../components/LikertScale";
+import burnt from "../components/images/popcorn-ratings-images/burntpopcorn.png";
+import kernel from "../components/images/popcorn-ratings-images/kernel.png";
+import whitepopcorn from "../components/images/popcorn-ratings-images/whitepopcorn.png";
+import slightlybuttered from "../components/images/popcorn-ratings-images/slightlybuttered.png";
+import buttered from "../components/images/popcorn-ratings-images/buttered.png";
 
 //setState for title searches
 
@@ -175,10 +180,48 @@ function Home() {
                   <div className="moviereview__burntmetersection">
                     <h3 className="moviereview__heading">Burnt Meter</h3>
                     {/* <Rater userRating={userRating} handleRate={handleRate} /> */}
+                    <p className="moviereview__explanation">
+                      On a scale of 1-5 (from burnt and disgusting, to popped,
+                      buttery goodness), how would you rate this movie or TV
+                      show?
+                    </p>
                     <LikertScale
                       userRating={userRating}
                       handleRate={handleRate}
                     />
+                    <div className="likertScale__images">
+                      {/* Image 1 */}
+                      <img
+                        className="likerScale__burnt"
+                        src={burnt}
+                        alt="burnt popcorn kernel"
+                      />
+                      {/* Image 2 */}
+                      <img
+                        className="likerScale__kernel"
+                        src={kernel}
+                        alt="popcorn kernel"
+                      />
+
+                      {/* Image 3 */}
+                      <img
+                        className="likerScale__whitepopcorn"
+                        src={whitepopcorn}
+                        alt="popcorn"
+                      />
+                      {/* Image 4 */}
+                      <img
+                        className="likerScale__slightlybuttered"
+                        src={slightlybuttered}
+                        alt="slightly buttered popcorn"
+                      />
+                      {/* Image 5 */}
+                      <img
+                        className="likerScale__buttered"
+                        src={buttered}
+                        alt="buttered popcorn"
+                      />
+                    </div>
                   </div>
 
                   <div className="moviereview__reviewsection">
