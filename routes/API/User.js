@@ -72,6 +72,19 @@ userRouter.post('/movie', passport.authenticate('jwt', {session : false}), (req,
     })
 });
 
+// Update a Movie
+userRouter.put('/updatemovie/:id', passport.authenticate('jwt', {session : false}), (req, res) => {
+    Movie.findByIdAndUpdate({_id: req.params.id}, 
+        // Right now, it updates the review, rating, and favorite all at once
+        {$set: {review: req.body.review, userRating: req.body.userRating, favorite: req.body.favorite}},
+         err => {
+        if (err) 
+            res.status(500).json({message: {msgBody: "Error has occured", msgError: true}});
+        else
+            res.status(200).json({message: {msgBody: "Successfully updated movie", msgError: false}});
+    })
+})
+
 // Get a movie by ID
 userRouter.get('/getmovie/:id', (req, res, next) => {
     Movie.findById({_id: req.params.id}, (err, post) => {
@@ -111,6 +124,5 @@ userRouter.get('/authenticated', passport.authenticate('jwt', {session : false})
     const {username} = req.user;
     res.status(200).json({isAuthenticated: true, user: {username}});
 });
-
 
 module.exports = userRouter;
