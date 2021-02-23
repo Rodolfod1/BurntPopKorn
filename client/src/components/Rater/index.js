@@ -1,7 +1,9 @@
-import Rater from 'react-rater-plus'
+import Rater from "react-rater-plus";
 
-function RaterBar (props) {
-    return (<Rater total={10} rating={props.userRating} onRate={props.handleRate} />)
+function RaterBar(props) {
+  return (
+    <Rater total={5} rating={props.userRating} onRate={props.handleRate} />
+  );
 }
 
-export default RaterBar
+export default RaterBar;
