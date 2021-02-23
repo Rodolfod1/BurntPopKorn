@@ -28,7 +28,10 @@ const MovieSchema = new mongoose.Schema({
     },
     releaseDate: {
         type: String
+    },
+    favorite: {
+        type: Boolean
     }
-})
+});
 
 module.exports = mongoose.model('Movie', MovieSchema);

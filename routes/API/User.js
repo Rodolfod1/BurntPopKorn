@@ -1,14 +1,14 @@
 const express = require('express');
 const userRouter = express.Router();
 const passport = require('passport');
-const passportCongig = require('../../passport');
+const passportConfig = require('../../passport');
 const JWT = require('jsonwebtoken');
 const User = require('../../models/User');
 const Movie = require('../../models/movie');
 
 const { authenticate } = require('passport');
 
-
+// JSON Web token attachtd to requests
 const signToken = userID => {
     return JWT.sign({
         iss: "BurntPopkorn",
@@ -16,6 +16,7 @@ const signToken = userID => {
     }, "BurntPopkorn", {expiresIn: "1h"})
 }
 
+// Register a new User
 userRouter.post('/register', (req, res) => {
     const { username, password } = req.body;
     User.findOne({username}, (err, user) => {
@@ -35,6 +36,7 @@ userRouter.post('/register', (req, res) => {
     })
 });
 
+// Log in an existing user
 userRouter.post('/login', passport.authenticate('local', {session : false}), (req, res) => {
     if (req.isAuthenticated()) {
         // passport.authenticate attactches user to the req
@@ -45,12 +47,13 @@ userRouter.post('/login', passport.authenticate('local', {session : false}), (re
     }
 });
 
+// Log out the current user
 userRouter.get('/logout', passport.authenticate('jwt', {session : false}), (req, res) => {
     res.clearCookie('access_token');
     res.json({user: {username: ""}, success: true});
 });
 
-
+// Post a movie
 userRouter.post('/movie', passport.authenticate('jwt', {session : false}), (req, res) => {
     const movie = new Movie(req.body);
     movie.save(err => {
@@ -69,15 +72,29 @@ userRouter.post('/movie', passport.authenticate('jwt', {session : false}), (req,
     })
 });
 
-
+// Get a movie by ID
 userRouter.get('/getmovie/:id', (req, res, next) => {
     Movie.findById({_id: req.params.id}, (err, post) => {
         if (err) return next(err);
         res.json(post)
-    })
-})
+    });
+});
 
+// Delete a movie
+userRouter.delete('/deletemovie/:id', (req, res, next) => {
+    Movie.findByIdAndDelete({_id: req.params.id}, (err, response) => {
+        if (err)
+        res.status(500).json({message: {msgBody: "Error has occured", msgError: true}});
+        else {
+        res.status(200).json({message: {msgBody: "Successfully deleted movie", msgError: false}});
+    }
+        // This works but is boring
+        // if (err) return next(err);
+        // res.json(response)
+    });
+});
 
+// Get all movies of current user
 userRouter.get('/movies', passport.authenticate('jwt', {session : false}), (req, res) => {
     // Populate gets all the data from movies, not just the ids
     User.findById({_id: req.user._id}).populate('movies').exec((err, document) => {
@@ -86,9 +103,10 @@ userRouter.get('/movies', passport.authenticate('jwt', {session : false}), (req,
         else {
             res.status(200).json({movies: document.movies, authenticated: true});
         }
-    })
+    });
 });
 
+// Check if there is a user signed in
 userRouter.get('/authenticated', passport.authenticate('jwt', {session : false}), (req, res) => {
     const {username} = req.user;
     res.status(200).json({isAuthenticated: true, user: {username}});
