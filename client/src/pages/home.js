@@ -103,6 +103,19 @@ function Home() {
     });
   };
 
+  const deleteReview = (event) => {
+    console.log(event.target)
+    MovieService.deleteMovieById(event.target.id).then(data => {
+      console.log(data);
+      MovieService.getMovies().then((data) => {
+        if (isAuthenticated) {
+          setMovies(data.movies);
+          setCurrentReview(null);
+        }
+      });
+    })
+  }
+
   return (
     <div className="homepage__container">
       {/* Header Section */}
@@ -222,6 +235,7 @@ function Home() {
               return (
                 <MovieItem
                   accessReview={accessReview}
+                  deleteReview={deleteReview}
                   key={movie._id}
                   id={movie._id}
                   movie={movie}
@@ -230,7 +244,7 @@ function Home() {
               );
             })}
           </ul>
-          {currentReview ? <ReviewDisplay info={currentReview} /> : <></>}
+          {currentReview ? <ReviewDisplay deleteReview={deleteReview} info={currentReview} /> : <></>}
         </div>
       </div>
     </div>

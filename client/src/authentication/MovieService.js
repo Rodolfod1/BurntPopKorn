@@ -1,3 +1,5 @@
+// import { response } from "express";
+
 export const MovieService = {
     getMovies : ()=>{
         return fetch('/user/movies')
@@ -24,12 +26,22 @@ export const MovieService = {
                 return {message: {msgBody: 'UnAuthorized'}, msgError: true};
         })
     },
-
     getMovieById: id => {
         return fetch('/user/getmovie/' + id)
         .then(response => {
             return response.json().then(data => data);
         })
+    },
+    deleteMovieById: id => {
+        console.log(id)
+        return fetch('/user/deletemovie/' + id, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            return response.json().then(data => data);
+        })
+        // .catch(err => {
+        //     console.log(err)
+        // })
     }
-
 }
