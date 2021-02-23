@@ -16,7 +16,7 @@ import LikertScale from "../components/LikertScale";
 function Home() {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState(null);
-  const [userRating, setUserRating] = useState(10);
+  const [userRating, setUserRating] = useState(1);
   const [movies, setMovies] = useState([]);
   const [currentReview, setCurrentReview] = useState(null);
 
@@ -36,9 +36,9 @@ function Home() {
   }, []);
 
   // This is passed to the Rater component to save our rating
-  const handleRate = (event) => {
-    setUserRating(event);
-    console.log(event);
+  const handleRate = (value) => {
+    setUserRating(value);
+    console.log(value);
   };
 
   const handleAddReview = (e) => {
@@ -191,7 +191,6 @@ function Home() {
                     <h3 className="moviereview__heading">Burnt Meter</h3>
                     {/* <Rater userRating={userRating} handleRate={handleRate} /> */}
                     <LikertScale
-                      userRating={userRating}
                       handleRate={handleRate}
                     />
                   </div>
