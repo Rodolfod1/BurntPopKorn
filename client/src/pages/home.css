@@ -80,6 +80,10 @@
   margin: 20px 0;
 }
 
+.movieinfo__plot {
+  padding-right: 40px;
+}
+
 .movietitle__heading {
   color: #ffffff;
   font-family: "FVAlmeloRegular";
@@ -120,6 +124,21 @@
   font-size: 28px;
 }
 
+/* Styling for the favorites section */
+.moviereview__addtofavortiessection {
+  padding: 20px 0 40px 0;
+}
+
+.moviereview__favoritesLabel {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.moviereview__favoritesBtn {
+  width: 5%;
+  height: 1.5em;
+}
+
 /* Styling for the Burnt Meter section */
 .moviereview__burntmetersection {
   padding: 40px 0 40px 0;
@@ -129,45 +148,39 @@
   font-size: 20px;
 }
 
-.burntmeter__slider {
-  width: 100%;
-}
-
 .moviereview__explanation {
   font-size: 20px;
   color: #ffffff;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
-
 .likerScale__burnt {
-  width: 55px;
-  margin-left: 20px;
+  width: 12%;
+  margin-left: 3%;
+  margin-right: 10%;
 }
 
 .likerScale__kernel {
-  width: 40px;
-  margin-left: 48px;
+  width: 8%;
+  margin-right: 10%;
 }
 
 .likerScale__whitepopcorn {
-  width: 55px;
-  margin-left: 46px;
+  width: 12%;
+  margin-right: 8%;
 }
 
 .likerScale__slightlybuttered {
-  width: 55px;
-  margin-left: 42px;
+  width: 12%;
+  margin-right: 8%;
 }
 
 .likerScale__buttered {
-  width: 55px;
-  margin-left: 41px;
+  width: 12%;
 }
 
-/* Styling for the movie review textarea section */
+/* Styling for the movie review section */
 .moviereview__reviewsection {
-  padding: 40px 0 40px 0;
-  border-bottom: 1px solid #ffffff;
+  padding: 40px 0 20px 0;
 }
 
 .moviereview__textarea {
@@ -185,21 +198,6 @@
   border-radius: 10px;
   font-family: "Hanken-Book";
   font-size: 16px;
-}
-
-/* Styling for the favorites section */
-.moviereview__addtofavortiessection {
-  margin-top: 40px;
-}
-
-.moviereview__favoritesLabel {
-  color: #ffffff;
-  font-size: 20px;
-}
-
-.moviereview__favoritesBtn {
-  width: 5%;
-  height: 1.5em;
 }
 
 /* Styling for Reviews Section */

@@ -10,11 +10,6 @@ import popcorn from "../components/images/spiltpopcorn.png";
 import Rater from "../components/Rater";
 import ReviewDisplay from "../components/ReviewDisplay";
 import LikertScale from "../components/LikertScale";
-import burnt from "../components/images/popcorn-ratings-images/burntpopcorn.png";
-import kernel from "../components/images/popcorn-ratings-images/kernel.png";
-import whitepopcorn from "../components/images/popcorn-ratings-images/whitepopcorn.png";
-import slightlybuttered from "../components/images/popcorn-ratings-images/slightlybuttered.png";
-import buttered from "../components/images/popcorn-ratings-images/buttered.png";
 
 //setState for title searches
 
@@ -175,71 +170,6 @@ function Home() {
                 </div>
 
                 <div className="movieinfo__review">
-                  <h1 className="moviereview__h1">Leave Your Rating</h1>
-
-                  <div className="moviereview__burntmetersection">
-                    <h3 className="moviereview__heading">Burnt Meter</h3>
-                    {/* <Rater userRating={userRating} handleRate={handleRate} /> */}
-                    <p className="moviereview__explanation">
-                      On a scale of 1-5 (from burnt and disgusting, to popped,
-                      buttery goodness), how would you rate this movie or TV
-                      show?
-                    </p>
-                    <LikertScale
-                      userRating={userRating}
-                      handleRate={handleRate}
-                    />
-                    <div className="likertScale__images">
-                      {/* Image 1 */}
-                      <img
-                        className="likerScale__burnt"
-                        src={burnt}
-                        alt="burnt popcorn kernel"
-                      />
-                      {/* Image 2 */}
-                      <img
-                        className="likerScale__kernel"
-                        src={kernel}
-                        alt="popcorn kernel"
-                      />
-
-                      {/* Image 3 */}
-                      <img
-                        className="likerScale__whitepopcorn"
-                        src={whitepopcorn}
-                        alt="popcorn"
-                      />
-                      {/* Image 4 */}
-                      <img
-                        className="likerScale__slightlybuttered"
-                        src={slightlybuttered}
-                        alt="slightly buttered popcorn"
-                      />
-                      {/* Image 5 */}
-                      <img
-                        className="likerScale__buttered"
-                        src={buttered}
-                        alt="buttered popcorn"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="moviereview__reviewsection">
-                    <h3 className="moviereview__heading">Leave a Review</h3>
-                    <textarea
-                      rows="5"
-                      className="moviereview__textarea"
-                      ref={reviewRef}
-                      placeholder="Add your movie review here."
-                    ></textarea>
-                    <button
-                      onClick={handleAddReview}
-                      className="homepage__addReviewBtn"
-                    >
-                      ADD YOUR REVIEW
-                    </button>
-                  </div>
-
                   <div className="moviereview__addtofavortiessection">
                     <h3 className="moviereview__heading">Add to Favorites</h3>
                     <input
@@ -256,6 +186,30 @@ function Home() {
                     >
                       &nbsp;Add this movie/TV show to my favorites.
                     </label>
+                  </div>
+                  <div className="moviereview__burntmetersection">
+                    <h3 className="moviereview__heading">Burnt Meter</h3>
+                    {/* <Rater userRating={userRating} handleRate={handleRate} /> */}
+                    <LikertScale
+                      userRating={userRating}
+                      handleRate={handleRate}
+                    />
+                  </div>
+
+                  <div className="moviereview__reviewsection">
+                    <h3 className="moviereview__heading">Leave a Review</h3>
+                    <textarea
+                      rows="5"
+                      className="moviereview__textarea"
+                      ref={reviewRef}
+                      placeholder="Add your movie review here."
+                    ></textarea>
+                    <button
+                      onClick={handleAddReview}
+                      className="homepage__addReviewBtn"
+                    >
+                      ADD YOUR REVIEW
+                    </button>
                   </div>
                 </div>
               </div>
