@@ -116,6 +116,10 @@ function Home() {
     })
   }
 
+  const closeWindow = () => {
+    setCurrentReview(null);
+  }
+
   return (
     <div className="homepage__container">
       {/* Header Section */}
@@ -244,7 +248,7 @@ function Home() {
               );
             })}
           </ul>
-          {currentReview ? <ReviewDisplay deleteReview={deleteReview} info={currentReview} /> : <></>}
+          {currentReview ? <ReviewDisplay closeWindow={closeWindow} deleteReview={deleteReview} info={currentReview} /> : <></>}
         </div>
       </div>
     </div>
