@@ -74,6 +74,7 @@ userRouter.post('/movie', passport.authenticate('jwt', {session : false}), (req,
 
 // Update a Movie
 userRouter.put('/updatemovie/:id', passport.authenticate('jwt', {session : false}), (req, res) => {
+    console.log(req.body)
     Movie.findByIdAndUpdate({_id: req.params.id}, 
         // Right now, it updates the review, rating, and favorite all at once
         {$set: {review: req.body.review, userRating: req.body.userRating, favorite: req.body.favorite}},

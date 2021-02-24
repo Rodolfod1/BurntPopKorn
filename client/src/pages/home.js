@@ -120,6 +120,32 @@ function Home() {
     setCurrentReview(null);
   }
 
+  const updateReview = event => {
+    console.log(event.target.id)
+    MovieService.updateMovieById(event.target.id, {review: "This is good", userRating: 4, favorite: false})
+    .then(data => {
+      console.log(data);
+    })
+  }
+
+  const transferReview = event => {
+    console.log(event.target.id)
+    MovieService.getMovieById(event.target.id)
+    .then(data => {
+      console.log(data);
+      const movieObj = {
+        Title: data.title,
+        Poster: data.poster,
+        Rated: data.rated,
+        Released: data.released,
+        Genre: data.genre,
+        Plot: data.plot
+      }
+      setUserRating(data.userRating);
+      setResults(movieObj);
+    })
+  }
+
   return (
     <div className="homepage__container">
       {/* Header Section */}
@@ -248,7 +274,7 @@ function Home() {
               );
             })}
           </ul>
-          {currentReview ? <ReviewDisplay closeWindow={closeWindow} deleteReview={deleteReview} info={currentReview} /> : <></>}
+          {currentReview ? <ReviewDisplay transferReview={transferReview} updateReview={updateReview} closeWindow={closeWindow} deleteReview={deleteReview} info={currentReview} /> : <></>}
         </div>
       </div>
     </div>
