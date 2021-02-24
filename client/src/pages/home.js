@@ -45,23 +45,23 @@ function Home() {
     if (!isAuthenticated) {
       return;
     }
-    const found = movies.find(element => element.title === results.Title);
-      if(found) {
-        const movieObj = {
-          review: reviewRef.current.value,
-          userRating: userRating,
-          favorite: favoriteRef.current.checked,
+    const found = movies.find((element) => element.title === results.Title);
+    if (found) {
+      const movieObj = {
+        review: reviewRef.current.value,
+        userRating: userRating,
+        favorite: favoriteRef.current.checked,
+      };
+      updateReview(found._id, movieObj);
+      MovieService.getMovies().then((data) => {
+        if (isAuthenticated) {
+          setMovies(data.movies);
+          setCurrentReview(null);
+          setResults(null);
         }
-        updateReview(found._id, movieObj)
-        MovieService.getMovies().then((data) => {
-          if (isAuthenticated) {
-            setMovies(data.movies);
-            setCurrentReview(null);
-            setResults(null);
-          }
-        });    
-        return;
-      }
+      });
+      return;
+    }
 
     const movieObj = {
       title: results.Title,
@@ -91,10 +91,9 @@ function Home() {
   };
 
   const handleClick = (event) => {
-    setOldReview('');
+    setOldReview("");
     setUserRating(null);
     API.getOMDb(search).then((moviedata) => {
-
       if (moviedata.data.Response === "False") {
         // We should add a message here telling the user that there were no results found
         // Right now, the form just clears.
@@ -102,23 +101,25 @@ function Home() {
         setSearch("");
         return;
       }
-        const found = movies.find(element => element.title === moviedata.data.Title);
-        if(found) {
-          const movieObj = {
-            Title: found.title,
-            Poster: found.poster,
-            Rated: found.rated,
-            Released: found.released,
-            Genre: found.genre,
-            Plot: found.plot
-          }
-          setUserRating(found.userRating);
-          setResults(movieObj);
-          setOldReview(found.review);
-          setCurrentReview(null);
-          setSearch("")
-          return;
-        }
+      const found = movies.find(
+        (element) => element.title === moviedata.data.Title
+      );
+      if (found) {
+        const movieObj = {
+          Title: found.title,
+          Poster: found.poster,
+          Rated: found.rated,
+          Released: found.released,
+          Genre: found.genre,
+          Plot: found.plot,
+        };
+        setUserRating(found.userRating);
+        setResults(movieObj);
+        setOldReview(found.review);
+        setCurrentReview(null);
+        setSearch("");
+        return;
+      }
       setUserRating(1);
       setResults(moviedata.data);
       setSearch("");
@@ -130,10 +131,10 @@ function Home() {
     setSearch(value);
   };
 
-  const handleReviewInputChange = event => {
+  const handleReviewInputChange = (event) => {
     const { value } = event.target;
     setOldReview(value);
-  }
+  };
 
   const accessReview = (event) => {
     MovieService.getMovieById(event.target.id).then((data) => {
@@ -142,46 +143,44 @@ function Home() {
   };
 
   const deleteReview = (event) => {
-    MovieService.deleteMovieById(event.target.id).then(data => {
+    MovieService.deleteMovieById(event.target.id).then((data) => {
       MovieService.getMovies().then((data) => {
         if (isAuthenticated) {
           setMovies(data.movies);
           setCurrentReview(null);
         }
       });
-    })
-  }
+    });
+  };
 
   const closeWindow = () => {
     setCurrentReview(null);
-  }
+  };
 
   // This isn't hooked up to anything yet
   const updateReview = (id, movieObj) => {
-    MovieService.updateMovieById(id, movieObj)
-    .then(data => {
+    MovieService.updateMovieById(id, movieObj).then((data) => {
       console.log(data);
-    })
-  }
+    });
+  };
 
-  const transferReview = event => {
+  const transferReview = (event) => {
     setUserRating(null);
-    MovieService.getMovieById(event.target.id)
-    .then(data => {
+    MovieService.getMovieById(event.target.id).then((data) => {
       const movieObj = {
         Title: data.title,
         Poster: data.poster,
         Rated: data.rated,
         Released: data.released,
         Genre: data.genre,
-        Plot: data.plot
-      }
+        Plot: data.plot,
+      };
       setUserRating(data.userRating);
       setResults(movieObj);
       setOldReview(data.review);
       setCurrentReview(null);
-    })
-  }
+    });
+  };
 
   return (
     <div className="homepage__container">
@@ -250,8 +249,34 @@ function Home() {
                 </div>
 
                 <div className="movieinfo__review">
+                  <h1 className="moviereview__h1">Add Your Review</h1>
+                  <div className="moviereview__burntmetersection">
+                    <h3 className="moviereview__heading">
+                      1. Rate on the Burnt Meter
+                    </h3>
+                    {!userRating ? null : (
+                      <LikertScale
+                        handleRate={handleRate}
+                        userRating={userRating}
+                        setUserRating={setUserRating}
+                      />
+                    )}
+                  </div>
+                  <div className="moviereview__reviewsection">
+                    <h3 className="moviereview__heading">2. Leave a Comment</h3>
+                    <textarea
+                      rows="4"
+                      className="moviereview__textarea"
+                      ref={reviewRef}
+                      placeholder="Add your movie review here."
+                      value={oldReview}
+                      onChange={handleReviewInputChange}
+                    ></textarea>
+                  </div>
                   <div className="moviereview__addtofavortiessection">
-                    <h3 className="moviereview__heading">Add to Favorites</h3>
+                    <h3 className="moviereview__heading">
+                      3. Add to Favorites
+                    </h3>
                     <input
                       className="moviereview__favoritesBtn"
                       type="checkbox"
@@ -267,33 +292,20 @@ function Home() {
                       &nbsp;Add this movie/TV show to my favorites.
                     </label>
                   </div>
-                  <div className="moviereview__burntmetersection">
-                    <h3 className="moviereview__heading">Burnt Meter</h3>
-                    {/* <Rater userRating={userRating} handleRate={handleRate} /> */}
-                    {!userRating ? null : 
-                      <LikertScale
-                      handleRate={handleRate}
-                      userRating={userRating}
-                      setUserRating={setUserRating}
-                      />
-                    }
-                  </div>
+                  <div className="moviereview__completereview">
+                    <h3 className="moviereview__heading">
+                      4. Save Your Review
+                    </h3>
+                    <p className="moviereview__save">
+                      Once you've completed steps 1-3, click the button below to
+                      save your review for future reference.
+                    </p>
 
-                  <div className="moviereview__reviewsection">
-                    <h3 className="moviereview__heading">Leave a Review</h3>
-                    <textarea
-                      rows="5"
-                      className="moviereview__textarea"
-                      ref={reviewRef}
-                      placeholder="Add your movie review here."
-                      value={oldReview}
-                      onChange={handleReviewInputChange}
-                    ></textarea>
                     <button
                       onClick={handleAddReview}
                       className="homepage__addReviewBtn"
                     >
-                      ADD YOUR REVIEW
+                      SAVE REVIEW
                     </button>
                   </div>
                 </div>
@@ -317,7 +329,17 @@ function Home() {
               );
             })}
           </ul>
-          {currentReview ? <ReviewDisplay transferReview={transferReview} updateReview={updateReview} closeWindow={closeWindow} deleteReview={deleteReview} info={currentReview} /> : <></>}
+          {currentReview ? (
+            <ReviewDisplay
+              transferReview={transferReview}
+              updateReview={updateReview}
+              closeWindow={closeWindow}
+              deleteReview={deleteReview}
+              info={currentReview}
+            />
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>

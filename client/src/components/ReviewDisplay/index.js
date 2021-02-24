@@ -16,9 +16,23 @@ const ReviewDisplay = (props) => {
         <h4 className="selectedreview__heading">Your Review:</h4>{" "}
         <span className="selectedreview__span">{props.info.review}</span>
       </div>
-      <button onClick={props.deleteReview} id={props.info._id}>Delete</button>
-      <button onClick={props.closeWindow}>Close</button>
-      <button id={props.info._id} onClick={props.transferReview}>Update Review</button>
+      <button
+        className="selectedreview__btn"
+        id={props.info._id}
+        onClick={props.transferReview}
+      >
+        UPDATE
+      </button>
+      <button
+        className="selectedreview__btn"
+        onClick={props.deleteReview}
+        id={props.info._id}
+      >
+        DELETE
+      </button>
+      <button className="selectedreview__btn" onClick={props.closeWindow}>
+        CLOSE
+      </button>
     </div>
   );
 };
