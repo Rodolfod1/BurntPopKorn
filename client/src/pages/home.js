@@ -92,6 +92,7 @@ function Home() {
 
   const handleClick = (event) => {
     setOldReview('');
+    setUserRating(null);
     API.getOMDb(search).then((moviedata) => {
 
       if (moviedata.data.Response === "False") {
@@ -118,6 +119,7 @@ function Home() {
           setSearch("")
           return;
         }
+      setUserRating(1);
       setResults(moviedata.data);
       setSearch("");
     });
@@ -163,6 +165,7 @@ function Home() {
   }
 
   const transferReview = event => {
+    setUserRating(null);
     MovieService.getMovieById(event.target.id)
     .then(data => {
       const movieObj = {
@@ -173,7 +176,6 @@ function Home() {
         Genre: data.genre,
         Plot: data.plot
       }
-      // reviewRef.current.value = data.review
       setUserRating(data.userRating);
       setResults(movieObj);
       setOldReview(data.review);
@@ -268,9 +270,13 @@ function Home() {
                   <div className="moviereview__burntmetersection">
                     <h3 className="moviereview__heading">Burnt Meter</h3>
                     {/* <Rater userRating={userRating} handleRate={handleRate} /> */}
-                    <LikertScale
+                    {!userRating ? null : 
+                      <LikertScale
                       handleRate={handleRate}
-                    />
+                      userRating={userRating}
+                      setUserRating={setUserRating}
+                      />
+                    }
                   </div>
 
                   <div className="moviereview__reviewsection">

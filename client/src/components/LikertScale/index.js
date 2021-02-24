@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Likert from "react-likert-scale";
 import burnt from "../images/popcorn-ratings-images/burnt.png";
 import kernel from "../images/popcorn-ratings-images/kernel.png";
@@ -8,19 +8,30 @@ import buttered from "../images/popcorn-ratings-images/buttered.png";
 
 
 function LikertScale(props) {
+  const [likertOptions, setLikertOptions] = useState(null);
+  const [rating, setRating] = useState(props.userRating);
 
-  const likertOptions = {
-    responses: [
-      { value: 1, text: "1", checked: true },
-      { value: 2, text: "2" },
-      { value: 3, text: "3" },
-      { value: 4, text: "4" },
-      { value: 5, text: "5" },
-    ],
-    onChange: (val) => {
-      props.handleRate(val.value)
-    }
-  }
+  useEffect(() => {
+    console.log("render likert");
+    const newResponses = [
+      {value: 1, text: '1'},
+      {value: 2, text: '2'},
+      {value: 3, text: '3'},
+      {value: 4, text: '4'},
+      {value: 5, text: '5'}, 
+    ];
+    newResponses.forEach(element => {
+      if (element.value === props.userRating) {
+        element.checked = true;
+      }
+    });
+    setLikertOptions({
+      responses: newResponses,
+      onChange: (val) => {
+        props.handleRate(val.value)
+      }
+    })
+  }, [])
 
   return (
     <>
@@ -28,7 +39,8 @@ function LikertScale(props) {
         On a scale of 1-5 (from burnt and disgusting, to popped, buttery
         goodness), how would you rate this movie or TV show?
       </p>
-      <Likert {...likertOptions}/>
+
+      {!likertOptions ? <></> : <Likert {...likertOptions}/>}
       <div className="likertScale__images">
         {/* Image 1 */}
         <img
