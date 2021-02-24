@@ -115,33 +115,18 @@
   color: #ffffff;
   font-family: "FVAlmeloRegular";
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .moviereview__heading {
   color: #ffffff;
   margin-bottom: 20px;
-  font-size: 28px;
-}
-
-/* Styling for the favorites section */
-.moviereview__addtofavortiessection {
-  padding: 20px 0 40px 0;
-}
-
-.moviereview__favoritesLabel {
-  color: #ffffff;
-  font-size: 20px;
-}
-
-.moviereview__favoritesBtn {
-  width: 5%;
-  height: 1.5em;
+  font-size: 24px;
 }
 
 /* Styling for the Burnt Meter section */
 .moviereview__burntmetersection {
-  padding: 40px 0 40px 0;
+  padding: 30px 0 30px 0;
   border-bottom: 1px solid #ffffff;
   border-top: 1px solid #ffffff;
   color: #ffffff;
@@ -180,7 +165,7 @@
 
 /* Styling for the movie review section */
 .moviereview__reviewsection {
-  padding: 40px 0 20px 0;
+  padding: 30px 0 30px 0;
 }
 
 .moviereview__textarea {
@@ -188,7 +173,34 @@
   font-size: 18px;
   font-family: "Hanken-Book";
   width: 95%;
-  margin-bottom: 15px;
+}
+
+/* Styling for the favorites section */
+.moviereview__addtofavortiessection {
+  padding: 30px 0 30px 0;
+  border-top: 1px solid #ffffff;
+}
+
+.moviereview__favoritesLabel {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.moviereview__favoritesBtn {
+  width: 5%;
+  height: 1.5em;
+}
+
+/* Styling for the save your review section */
+.moviereview__completereview {
+  padding: 30px 0 10px 0;
+  border-top: 1px solid #ffffff;
+}
+
+.moviereview__save {
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
 .homepage__addReviewBtn {
@@ -210,7 +222,6 @@
   font-family: "FVAlmeloRegular";
   font-size: 48px;
 }
-
 .reviews__list {
   list-style: none;
   margin-top: 20px;
