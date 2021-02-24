@@ -13,3 +13,8 @@
   font-size: 14px;
   margin-left: 20px;
 }
+
+.reviews__ticket {
+  width: 35px;
+  padding-right: 8px;
+}
