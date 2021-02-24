@@ -29,9 +29,9 @@ function HeaderStats() {
               HOME
             </Link>
           </button>
-          <button onClick={handleLogout} className="header__button-signout">
+          {/*<button onClick={handleLogout} className="header__button-signout">
             LOG OUT
-          </button>
+          </button>*/}
         </div>
       </div>
     </>
