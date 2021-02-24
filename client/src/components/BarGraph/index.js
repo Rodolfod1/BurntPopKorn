@@ -37,7 +37,7 @@ const BarGraph = () => {
                     borderColor: 'rgba(0,0,0,1)',
                     borderWidth: 2,
                     data
-                    },
+                }
                 ]
             }
             setBarGraphData(graphObj);
@@ -49,10 +49,19 @@ const BarGraph = () => {
             <Bar
             data={barGraphData}
             options={{
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            stepSize: 1,
+                            min: 0,
+                            max: 5
+                        }
+                      }],
+                },
                 title:{
                 display:true,
                 text:'Your Ratings',
-                fontSize:20
+                fontSize:20,
                 },
                 legend:{
                 display:true,

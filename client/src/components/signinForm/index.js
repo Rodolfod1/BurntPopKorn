@@ -14,11 +14,11 @@ function SignInForm(props) {
   const onSubmit = (e) => {
     e.preventDefault();
     if (!usernameRef.current.value) {
-      setAlertMessage("Please enter a username and password");
+      setAlertMessage("Please enter a username and password.");
       return;
     }
     if (passwordRef.current.value !== confirmPasswordRef.current.value) {
-      setAlertMessage("Password fields do not match");
+      setAlertMessage("Password fields do not match. Please try again.");
       return;
     }
     AuthService.register({
@@ -50,11 +50,6 @@ function SignInForm(props) {
         <form className="form" onSubmit={onSubmit}>
           <label htmlFor="uname"></label>
 
-          {/* This div is the alert that pops up and tells the user if they didn't complete the form,
-          if their passwords don't match, or if their username is already taken
-          It needs to be styled to look scary and intimidating */}
-          <div className="alertMessage">{alertMessage}</div>
-
           <input
             className="form__input"
             type="text"
@@ -81,6 +76,8 @@ function SignInForm(props) {
             placeholder="Confirm password"
             ref={confirmPasswordRef}
           />
+          <div className="alertMessage">{alertMessage}</div>
+
           <input
             className="form__button"
             type="submit"
