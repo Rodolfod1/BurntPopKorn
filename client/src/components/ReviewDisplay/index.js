@@ -18,6 +18,7 @@ const ReviewDisplay = (props) => {
       </div>
       <button onClick={props.deleteReview} id={props.info._id}>Delete</button>
       <button onClick={props.closeWindow}>Close</button>
+      <button id={props.info._id} onClick={props.transferReview}>Update Review</button>
     </div>
   );
 };

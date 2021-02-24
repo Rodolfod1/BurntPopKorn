@@ -33,7 +33,6 @@ export const MovieService = {
         })
     },
     deleteMovieById: id => {
-        console.log(id)
         return fetch('/user/deletemovie/' + id, {
             method: 'DELETE'
         })
@@ -43,5 +42,19 @@ export const MovieService = {
         // .catch(err => {
         //     console.log(err)
         // })
+    },
+    updateMovieById: (id, movie) => {
+        console.log(id);
+        console.log(movie)
+        return fetch('/user/updatemovie/' + id, {
+            method: 'PUT',
+            body : JSON.stringify(movie),
+            headers: {
+                'Content-Type' : 'application/json'
+            }
+        })
+        .then(response => {
+            return response.json().then(data => data);
+        });
     }
 }
