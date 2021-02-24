@@ -17,6 +17,7 @@ const ReviewDisplay = (props) => {
         <span className="selectedreview__span">{props.info.review}</span>
       </div>
       <button onClick={props.deleteReview} id={props.info._id}>Delete</button>
+      <button onClick={props.closeWindow}>Close</button>
     </div>
   );
 };
