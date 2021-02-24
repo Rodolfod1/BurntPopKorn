@@ -19,6 +19,7 @@ function Home() {
   const [userRating, setUserRating] = useState(1);
   const [movies, setMovies] = useState([]);
   const [currentReview, setCurrentReview] = useState(null);
+  const [oldReview, setOldReview] = useState();
 
   const reviewRef = useRef();
   const favoriteRef = useRef();
@@ -38,13 +39,30 @@ function Home() {
   // This is passed to the Rater component to save our rating
   const handleRate = (value) => {
     setUserRating(value);
-    console.log(value);
   };
 
   const handleAddReview = (e) => {
     if (!isAuthenticated) {
       return;
     }
+    const found = movies.find(element => element.title === results.Title);
+      if(found) {
+        const movieObj = {
+          review: reviewRef.current.value,
+          userRating: userRating,
+          favorite: favoriteRef.current.checked,
+        }
+        updateReview(found._id, movieObj)
+        MovieService.getMovies().then((data) => {
+          if (isAuthenticated) {
+            setMovies(data.movies);
+            setCurrentReview(null);
+            setResults(null);
+          }
+        });    
+        return;
+      }
+
     const movieObj = {
       title: results.Title,
       genre: results.Genre,
@@ -56,19 +74,16 @@ function Home() {
       rated: results.Rated,
       releaseDate: results.Released,
     };
-    console.log(movieObj);
     MovieService.postMovie(movieObj)
       .then((data) => {
         const { message } = data;
 
         if (!message.msgError) {
           MovieService.getMovies().then((getData) => {
-            console.log(getData.movies);
             setMovies(getData.movies);
           });
           setResults(null);
         }
-        console.log(data);
       })
       .catch((err) => {
         console.log(err);
@@ -76,8 +91,8 @@ function Home() {
   };
 
   const handleClick = (event) => {
+    setOldReview('');
     API.getOMDb(search).then((moviedata) => {
-      console.log(moviedata.data.Response);
 
       if (moviedata.data.Response === "False") {
         // We should add a message here telling the user that there were no results found
@@ -86,6 +101,23 @@ function Home() {
         setSearch("");
         return;
       }
+        const found = movies.find(element => element.title === moviedata.data.Title);
+        if(found) {
+          const movieObj = {
+            Title: found.title,
+            Poster: found.poster,
+            Rated: found.rated,
+            Released: found.released,
+            Genre: found.genre,
+            Plot: found.plot
+          }
+          setUserRating(found.userRating);
+          setResults(movieObj);
+          setOldReview(found.review);
+          setCurrentReview(null);
+          setSearch("")
+          return;
+        }
       setResults(moviedata.data);
       setSearch("");
     });
@@ -94,8 +126,12 @@ function Home() {
   const handleInputChange = (event) => {
     const { value } = event.target;
     setSearch(value);
-    console.log(value);
   };
+
+  const handleReviewInputChange = event => {
+    const { value } = event.target;
+    setOldReview(value);
+  }
 
   const accessReview = (event) => {
     MovieService.getMovieById(event.target.id).then((data) => {
@@ -104,9 +140,7 @@ function Home() {
   };
 
   const deleteReview = (event) => {
-    console.log(event.target)
     MovieService.deleteMovieById(event.target.id).then(data => {
-      console.log(data);
       MovieService.getMovies().then((data) => {
         if (isAuthenticated) {
           setMovies(data.movies);
@@ -120,19 +154,17 @@ function Home() {
     setCurrentReview(null);
   }
 
-  const updateReview = event => {
-    console.log(event.target.id)
-    MovieService.updateMovieById(event.target.id, {review: "This is good", userRating: 4, favorite: false})
+  // This isn't hooked up to anything yet
+  const updateReview = (id, movieObj) => {
+    MovieService.updateMovieById(id, movieObj)
     .then(data => {
       console.log(data);
     })
   }
 
   const transferReview = event => {
-    console.log(event.target.id)
     MovieService.getMovieById(event.target.id)
     .then(data => {
-      console.log(data);
       const movieObj = {
         Title: data.title,
         Poster: data.poster,
@@ -141,8 +173,11 @@ function Home() {
         Genre: data.genre,
         Plot: data.plot
       }
+      // reviewRef.current.value = data.review
       setUserRating(data.userRating);
       setResults(movieObj);
+      setOldReview(data.review);
+      setCurrentReview(null);
     })
   }
 
@@ -245,6 +280,8 @@ function Home() {
                       className="moviereview__textarea"
                       ref={reviewRef}
                       placeholder="Add your movie review here."
+                      value={oldReview}
+                      onChange={handleReviewInputChange}
                     ></textarea>
                     <button
                       onClick={handleAddReview}
