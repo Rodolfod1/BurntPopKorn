@@ -42,6 +42,24 @@
   width: 40%;
 }
 
+/* Styling for the no movies found error message */
+.homepage__errormessage-div {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.homepage__errormessage-img {
+  width: 100px;
+}
+
+.homepage__errormessage {
+  color: #ee1d24;
+  font-size: 20px;
+  font-style: italic;
+  margin: 0 15px;
+}
+
 /* Styling for empty search screen */
 .searchresults__noresultsSection {
   display: flex;
@@ -50,7 +68,7 @@
 }
 
 .noresultsSection__popcornimg {
-  width: 200px;
+  width: 225px;
 }
 .noresultsSection__heading {
   color: #ffffff;
@@ -191,6 +209,13 @@
   height: 1.5em;
 }
 
+.moviereview__favoritesp {
+  color: #ffffff;
+  display: inline;
+  font-size: 16px;
+  font-style: italic;
+}
+
 /* Styling for the save your review section */
 .moviereview__completereview {
   padding: 30px 0 10px 0;
@@ -225,10 +250,4 @@
 .reviews__list {
   list-style: none;
   margin-top: 20px;
-}
-
-/* Here's the css for the error message that I just added. 
-I even added the right shade or red this time, so I'm getting better */
-.error_message {
-  color: #ee1d24;
 }
