@@ -18,6 +18,7 @@ function Home() {
   const [results, setResults] = useState(null);
   const [userRating, setUserRating] = useState(1);
   const [movies, setMovies] = useState([]);
+  const [checkbox, setCheckbox] = useState(false)
   const [currentReview, setCurrentReview] = useState(null);
   const [oldReview, setOldReview] = useState();
 
@@ -36,6 +37,15 @@ function Home() {
     });
   }, []);
 
+  const handleCheckBox = () => {
+    if(checkbox) {
+      setCheckbox(false)
+    } else {
+      setCheckbox(true);
+    }
+  }
+
+
   // This is passed to the Rater component to save our rating
   const handleRate = (value) => {
     setUserRating(value);
@@ -50,7 +60,7 @@ function Home() {
       const movieObj = {
         review: reviewRef.current.value,
         userRating: userRating,
-        favorite: favoriteRef.current.checked,
+        favorite: checkbox,
       };
       updateReview(found._id, movieObj);
       MovieService.getMovies().then((data) => {
@@ -70,10 +80,11 @@ function Home() {
       plot: results.Plot,
       review: reviewRef.current.value,
       userRating: userRating,
-      favorite: favoriteRef.current.checked,
+      favorite: checkbox,
       rated: results.Rated,
       releaseDate: results.Released,
     };
+    console.log(movieObj);
     MovieService.postMovie(movieObj)
       .then((data) => {
         const { message } = data;
@@ -93,6 +104,7 @@ function Home() {
   const handleClick = (event) => {
     setOldReview("");
     setUserRating(null);
+    setCheckbox(false);
     API.getOMDb(search).then((moviedata) => {
       if (moviedata.data.Response === "False") {
         // We should add a message here telling the user that there were no results found
@@ -113,6 +125,7 @@ function Home() {
           Genre: found.genre,
           Plot: found.plot,
         };
+        setCheckbox(found.favorite);
         setUserRating(found.userRating);
         setResults(movieObj);
         setOldReview(found.review);
@@ -175,6 +188,7 @@ function Home() {
         Genre: data.genre,
         Plot: data.plot,
       };
+      setCheckbox(data.favorite);
       setUserRating(data.userRating);
       setResults(movieObj);
       setOldReview(data.review);
@@ -283,7 +297,9 @@ function Home() {
                       id="favorites"
                       name="favorites"
                       value="favorite"
-                      ref={favoriteRef}
+                      // ref={favoriteRef}
+                      checked={checkbox}
+                      onClick={handleCheckBox}
                     />
                     <label
                       className="moviereview__favoritesLabel"
