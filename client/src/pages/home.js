@@ -20,6 +20,7 @@ function Home() {
   const [movies, setMovies] = useState([]);
   const [checkbox, setCheckbox] = useState(false)
   const [currentReview, setCurrentReview] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
   const [oldReview, setOldReview] = useState();
 
   const reviewRef = useRef();
@@ -102,6 +103,7 @@ function Home() {
   };
 
   const handleClick = (event) => {
+    setErrorMessage(null);
     setOldReview("");
     setUserRating(null);
     setCheckbox(false);
@@ -109,6 +111,7 @@ function Home() {
       if (moviedata.data.Response === "False") {
         // We should add a message here telling the user that there were no results found
         // Right now, the form just clears.
+        setErrorMessage(`Un oh, it looks like "${search}" is not in our records`)
         setResults(null);
         setSearch("");
         return;
@@ -178,6 +181,7 @@ function Home() {
   };
 
   const transferReview = (event) => {
+    setErrorMessage(null);
     setUserRating(null);
     MovieService.getMovieById(event.target.id).then((data) => {
       const movieObj = {
@@ -205,6 +209,11 @@ function Home() {
         {/* Searchbar Section */}
         <div className="homepage__searchSection">
           <h1 className="searchfor__h1">Search for a Movie or TV Show</h1>
+
+          {/* Here's the Error Message */}
+          {!errorMessage ? null : <p className="error_message" >{errorMessage}</p> }
+          
+
           <div className="homepage__searchBarandBtn">
             <input
               className="homepage__searchInput"
