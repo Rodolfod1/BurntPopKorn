@@ -5,11 +5,27 @@ import { MovieService } from "../../authentication/MovieService";
 const DoughnutChart = () => {
     const [doughnutData, setDoughnutData] = useState(null)
 
+    // Function for counting the instances of genres
+    const getLabelsAndData = arr => {
+        const labels = [];
+        const data = []
+        let prev;
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] !== prev) {
+            labels.push(arr[i]);
+            data.push(1);
+          } else {
+            data[data.length - 1]++;
+          }
+          prev = arr[i];
+        }
+        return [labels, data];
+    }
+
     useEffect(() => {
         // Get the user's saved movies
         MovieService.getMovies()
         .then(res => {
-            console.log(res);
 
             // If no user is logged in, return so page doesn't crash
             if(res.message?.msgError) {
@@ -20,13 +36,21 @@ const DoughnutChart = () => {
                 return;
             }
 
-            const labels = [];
-            const data = [];
-            // Labels and data - genres for pie chart
+            const genrelabels = [];
+
+            // Split up all the genres as their own strings
             res.movies.forEach(movie => {
-                labels.push(movie.genre);
-                data.push(movie.genre);
+                let genreArray = (movie.genre.split(' '));
+                genreArray.forEach(genre => {
+                    let formattedGenre = genre.replace(',', '');
+                    genrelabels.push(formattedGenre);
+                });
             });
+
+            // Count the instances of each genre
+            const sortedGenres = genrelabels.sort();
+            const [labels, data] = getLabelsAndData(sortedGenres);
+
             // datasets and labels defined for the doughnut object
             const graphObj = {
                 labels,
@@ -41,7 +65,6 @@ const DoughnutChart = () => {
                 ]
             }
             setDoughnutData(graphObj);
-            console.log(data);
         })
     },[])
 
