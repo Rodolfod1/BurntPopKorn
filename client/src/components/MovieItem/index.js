@@ -5,7 +5,11 @@ import star from "../images/star.png";
 const MovieItem = (props) => {
   return (
     <li className="reviews__listItem">
-      {!props.movie.favorite ? <></> : <img className="reviews__ticket" src={star} alt="movie ticket" />}
+      {!props.movie.favorite ? (
+        <></>
+      ) : (
+        <img className="reviews__star" src={star} alt="movie ticket" />
+      )}
       {props.movie.title}
       <button
         className="reviews__button"

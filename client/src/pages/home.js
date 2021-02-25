@@ -7,9 +7,10 @@ import "../components/HeaderHome/HeaderHome.css";
 import "./home.css";
 import MovieItem from "../components/MovieItem";
 import popcorn from "../components/images/spiltpopcorn.png";
-import Rater from "../components/Rater";
 import ReviewDisplay from "../components/ReviewDisplay";
 import LikertScale from "../components/LikertScale";
+import threedglasses from "../components/images/3DGLASSES.png";
+import star from "../components/images/star.png";
 
 //setState for title searches
 
@@ -18,7 +19,7 @@ function Home() {
   const [results, setResults] = useState(null);
   const [userRating, setUserRating] = useState(1);
   const [movies, setMovies] = useState([]);
-  const [checkbox, setCheckbox] = useState(false)
+  const [checkbox, setCheckbox] = useState(false);
   const [currentReview, setCurrentReview] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [oldReview, setOldReview] = useState();
@@ -39,13 +40,12 @@ function Home() {
   }, []);
 
   const handleCheckBox = () => {
-    if(checkbox) {
-      setCheckbox(false)
+    if (checkbox) {
+      setCheckbox(false);
     } else {
       setCheckbox(true);
     }
-  }
-
+  };
 
   // This is passed to the Rater component to save our rating
   const handleRate = (value) => {
@@ -109,9 +109,10 @@ function Home() {
     setCheckbox(false);
     API.getOMDb(search).then((moviedata) => {
       if (moviedata.data.Response === "False") {
-        // We should add a message here telling the user that there were no results found
-        // Right now, the form just clears.
-        setErrorMessage(`Un oh, it looks like "${search}" is not in our records`)
+        setErrorMessage(
+          `We can't find "${search}" in our database. 
+          Please try again.`
+        );
         setResults(null);
         setSearch("");
         return;
@@ -210,10 +211,6 @@ function Home() {
         <div className="homepage__searchSection">
           <h1 className="searchfor__h1">Search for a Movie or TV Show</h1>
 
-          {/* Here's the Error Message */}
-          {!errorMessage ? null : <p className="error_message" >{errorMessage}</p> }
-          
-
           <div className="homepage__searchBarandBtn">
             <input
               className="homepage__searchInput"
@@ -225,6 +222,17 @@ function Home() {
             <button className="homepage__searchBtn" onClick={handleClick}>
               SEARCH
             </button>
+            {/* Here's the Error Message */}
+            {!errorMessage ? null : (
+              <div className="homepage__errormessage-div">
+                <img
+                  className="homepage__errormessage-img"
+                  src={threedglasses}
+                  alt=" 3D glasses"
+                />
+                <p className="homepage__errormessage">{errorMessage}</p>
+              </div>
+            )}
           </div>
           <div className="main__searchresults">
             {/* NO RESULTS, DISPLAY BELOW*/}
@@ -316,6 +324,17 @@ function Home() {
                     >
                       &nbsp;Add this movie/TV show to my favorites.
                     </label>
+                    <div classname="moviereview__favinstructionsdiv">
+                      <img
+                        className="reviews__star"
+                        src={star}
+                        alt="movie ticket"
+                      />
+                      <p className="moviereview__favoritesp">
+                        Favorites will be denoted by the star icon in Your
+                        Reviews section.
+                      </p>
+                    </div>
                   </div>
                   <div className="moviereview__completereview">
                     <h3 className="moviereview__heading">
