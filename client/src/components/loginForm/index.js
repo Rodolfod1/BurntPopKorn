@@ -8,7 +8,18 @@ function LoginForm() {
   const usernameRef = useRef();
   const passwordRef = useRef();
   const [message, setMessage] = useState(null);
+  const [passwordInput, setPasswordInput] = useState('');
+  const [usernameInput, setUsernameInput] = useState('');
   const history = useHistory();
+
+  const handlePasswordChange = event => {
+    setPasswordInput(event.target.value);
+  }
+
+  const handleUsernameChange = event => {
+    setUsernameInput(event.target.value);
+  }
+
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -17,15 +28,21 @@ function LoginForm() {
       password: passwordRef.current.value,
     };
 
+    if(!usernameRef.current.value || !passwordRef.current.value) {
+      return setMessage("Please enter in your username and password");
+    }
+
     AuthService.login(user).then((data) => {
       console.log(data);
-      const { isAuthenticated, user, message } = data;
+      const { isAuthenticated, user } = data;
       if (isAuthenticated) {
         authContext.setUser(user);
         authContext.setIsAuthenticated(isAuthenticated);
         history.push("/home");
       } else {
-        setMessage(message);
+        setMessage("Username and password do not match");
+        setPasswordInput('');
+        setUsernameInput('');
       }
     });
   };
@@ -46,6 +63,8 @@ function LoginForm() {
             name="uname"
             placeholder="Username"
             ref={usernameRef}
+            value={usernameInput}
+            onChange={handleUsernameChange}
           />
 
           <label htmlFor="password"></label>
@@ -56,7 +75,13 @@ function LoginForm() {
             name="password"
             placeholder="Password"
             ref={passwordRef}
+            value={passwordInput}
+            onChange={handlePasswordChange}
           />
+
+          {/* Here is the Error Message!!!!!!!!!!!!!!!!! */}
+          <div>{message}</div>
+
           <input className="loginform__button" type="submit" value="LOG IN" />
         </form>
         <div className="loginform__createaccountsection">
