@@ -5,6 +5,8 @@ import { MovieService } from "../../authentication/MovieService";
 const BarGraph = () => {
     const [barGraphData, setBarGraphData] = useState(null)
 
+
+
     useEffect(() => {
         // Get the user's saved movies
         MovieService.getMovies()
@@ -26,13 +28,41 @@ const BarGraph = () => {
                 labels.push(movie.title);
                 data.push(movie.userRating);
             });
+
+            let colorBars = 0;
+            const backgroundColors = [];
+            const labelsP = labels
+            const barGraphSort = () => {
+                console.log(colorBars)
+                for(let i=0; i<labelsP.length; i++){
+                    console.log(i)
+                    if(colorBars === 0){
+                        backgroundColors.push('#EE1D24');
+                        console.log(colorBars)
+                        console.log(backgroundColors)
+                        colorBars++
+                    } else if (colorBars === 1){
+                        backgroundColors.push('#00ACEB');
+                        console.log(colorBars)
+                        colorBars++
+                    } else if (colorBars === 2){
+                        backgroundColors.push('#FDCF05');
+                        console.log(colorBars)
+                        colorBars++
+                    } else {colorBars = 1;
+                    backgroundColors.push('#EE1D24');}
+        
+            }
+            return backgroundColors
+            }
+   
             // Format it for Chart.js
             const graphObj = {
                 labels,
                 datasets: [
                     {
                     label: 'Ratings',
-                    backgroundColor: 'rgba(75,192,192,1)',
+                    backgroundColor: barGraphSort(backgroundColors),
                     borderColor: 'rgba(0,0,0,1)',
                     borderWidth: 2,
                     data
@@ -63,8 +93,7 @@ const BarGraph = () => {
                 fontSize:20,
                 },
                 legend:{
-                display:true,
-                position:'right'
+                display:false
                 }
             }}
             />

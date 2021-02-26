@@ -51,6 +51,33 @@ const DoughnutChart = () => {
             const sortedGenres = genrelabels.sort();
             const [labels, data] = getLabelsAndData(sortedGenres);
 
+            let colorBars = 0;
+            const backgroundColors = [];
+            const labelsP = sortedGenres
+            const doughnutGraphSort = () => {
+                console.log(colorBars)
+                for(let i=0; i<labelsP.length; i++){
+                    console.log(i)
+                    if(colorBars === 0){
+                        backgroundColors.push('#EE1D24');
+                        console.log(colorBars)
+                        console.log(backgroundColors)
+                        colorBars++
+                    } else if (colorBars === 1){
+                        backgroundColors.push('#00ACEB');
+                        console.log(colorBars)
+                        colorBars++
+                    } else if (colorBars === 2){
+                        backgroundColors.push('#FDCF05');
+                        console.log(colorBars)
+                        colorBars++
+                    } else {colorBars = 1;
+                    backgroundColors.push('#EE1D24');}
+        
+            }
+            return backgroundColors
+            }
+
             // datasets and labels defined for the doughnut object
             const graphObj = {
                 labels,
@@ -58,7 +85,7 @@ const DoughnutChart = () => {
                     {
                     data,
                     label: 'Genres',
-                    backgroundColor: 'rgba(75,192,192,1)',
+                    backgroundColor: doughnutGraphSort(backgroundColors),
                     borderColor: 'rgba(0,0,0,1)',
                     borderWidth: 2,
                 }
@@ -79,8 +106,7 @@ const DoughnutChart = () => {
                 fontSize:20,
                 },
                 legend:{
-                display:true,
-                position:'right'
+                display:false
                 }
             }}
             />
