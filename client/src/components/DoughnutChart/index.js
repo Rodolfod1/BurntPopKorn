@@ -106,8 +106,7 @@ const DoughnutChart = () => {
                 fontSize:20,
                 },
                 legend:{
-                display:true,
-                position:'right'
+                display:false
                 }
             }}
             />
