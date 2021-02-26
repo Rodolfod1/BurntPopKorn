@@ -83,11 +83,21 @@
   padding: 10px 20px;
 }
 
+.loginform__errorMessage {
+  font-family: "Hanken-Book";
+  color: #000000;
+  font-size: 16px;
+  font-style: italic;
+  border-radius: 2px;
+}
+
 /* Styling for mobile devices */
 
 @media only screen and (max-width: 768px) {
   .loginForm__main {
     background: none;
+    display: flex;
+    justify-content: center;
   }
 
   .loginForm__section {

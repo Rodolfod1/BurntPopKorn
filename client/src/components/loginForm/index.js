@@ -8,18 +8,17 @@ function LoginForm() {
   const usernameRef = useRef();
   const passwordRef = useRef();
   const [message, setMessage] = useState(null);
-  const [passwordInput, setPasswordInput] = useState('');
-  const [usernameInput, setUsernameInput] = useState('');
+  const [passwordInput, setPasswordInput] = useState("");
+  const [usernameInput, setUsernameInput] = useState("");
   const history = useHistory();
 
-  const handlePasswordChange = event => {
+  const handlePasswordChange = (event) => {
     setPasswordInput(event.target.value);
-  }
+  };
 
-  const handleUsernameChange = event => {
+  const handleUsernameChange = (event) => {
     setUsernameInput(event.target.value);
-  }
-
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -28,8 +27,8 @@ function LoginForm() {
       password: passwordRef.current.value,
     };
 
-    if(!usernameRef.current.value || !passwordRef.current.value) {
-      return setMessage("Please enter in your username and password");
+    if (!usernameRef.current.value || !passwordRef.current.value) {
+      return setMessage("Please enter your username and password.");
     }
 
     AuthService.login(user).then((data) => {
@@ -40,9 +39,9 @@ function LoginForm() {
         authContext.setIsAuthenticated(isAuthenticated);
         history.push("/home");
       } else {
-        setMessage("Username and password do not match");
-        setPasswordInput('');
-        setUsernameInput('');
+        setMessage("Username and password do not match.");
+        setPasswordInput("");
+        setUsernameInput("");
       }
     });
   };
@@ -80,7 +79,7 @@ function LoginForm() {
           />
 
           {/* Here is the Error Message!!!!!!!!!!!!!!!!! */}
-          <div>{message}</div>
+          <div className="loginform__errorMessage">{message}</div>
 
           <input className="loginform__button" type="submit" value="LOG IN" />
         </form>

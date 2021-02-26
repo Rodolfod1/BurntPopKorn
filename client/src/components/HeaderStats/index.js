@@ -4,6 +4,7 @@ import { AuthService } from "../../authentication/AuthService";
 import { AuthContext } from "../../authentication/AuthContext";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "../HeaderStats/HeaderStats.css";
 
 function HeaderStats() {
   const { user, setUser, setIsAuthenticated } = useContext(AuthContext);
@@ -23,15 +24,15 @@ function HeaderStats() {
     <>
       <div className="header__home">
         <img className="header__logo" src={logo} alt="logo" />
-        <div className="header__greetingAndBtn">
-          <button className="header__button-activity">
+        <div className="header__buttons">
+          <button className="header__homeBtn">
             <Link className="header__activity-link" to="/home">
               HOME
             </Link>
           </button>
-          {/*<button onClick={handleLogout} className="header__button-signout">
+          {/* <button onClick={handleLogout} className="header__button-signout">
             LOG OUT
-          </button>*/}
+          </button> */}
         </div>
       </div>
     </>

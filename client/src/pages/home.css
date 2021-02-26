@@ -251,3 +251,43 @@
   list-style: none;
   margin-top: 20px;
 }
+
+/* Styling for mobile devices */
+
+@media only screen and (max-width: 768px) {
+  .homepage__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .homepage__searchSection {
+    width: 90%;
+    margin-right: 0;
+  }
+
+  .homepage__searchInput {
+    width: 70%;
+  }
+  .homepage__reviewSection {
+    text-align: left;
+    margin-top: 0;
+  }
+  .movieResults__div {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .movieinfo__div {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .movieinfo__review {
+    padding: 0;
+    width: 100%;
+  }
+  .moviereview__completereview {
+    padding-bottom: 0;
+  }
+}
