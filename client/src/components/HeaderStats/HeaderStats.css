@@ -21,9 +21,9 @@
   font-size: 16px;
 }
 
-.header__button-activity {
+.header__homeBtn {
   padding: 15px 20px 10px 20px;
-  margin: 20px 7px 20px 20px;
+  margin: 20px 20px 20px 20px;
   background-color: #fdcf05;
   border-radius: 10px;
   font-family: "Hanken-Book";
@@ -61,11 +61,5 @@
   }
   .header__home {
     border-bottom: 2px solid #fdcf05;
-  }
-  .header__greeting {
-    display: none;
-  }
-  .header__button-activity {
-    display: none;
   }
 }
