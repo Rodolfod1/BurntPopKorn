@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:3001",
   "name": "burntpopkorn",
   "version": "0.1.0",
   "private": true,
@@ -7,6 +8,7 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.6.3",
     "axios": "^0.21.1",
+    "canvasjs-react-charts": "^1.0.5",
     "chart.js": "^2.9.4",
     "dotenv": "^8.2.0",
     "font-awesome": "^4.7.0",

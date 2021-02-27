@@ -17,7 +17,6 @@ import whitepopcorn from "../components/images/popcorn-ratings-images/whitepopco
 import slightlybuttered from "../components/images/popcorn-ratings-images/slightlybuttered.png";
 import buttered from "../components/images/popcorn-ratings-images/buttered.png";
 
-
 //setState for title searches
 
 function Home() {
@@ -29,8 +28,8 @@ function Home() {
   const [currentReview, setCurrentReview] = useState(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const [oldReview, setOldReview] = useState();
-  const [averageScore, setAverageScore] = useState(null)
-  const [averageIcon, setAverageIcon] = useState(null)
+  const [averageScore, setAverageScore] = useState(null);
+  const [averageIcon, setAverageIcon] = useState(null);
 
   const reviewRef = useRef();
   const favoriteRef = useRef();
@@ -48,33 +47,32 @@ function Home() {
   }, []);
 
   const getMovieScoreAverage = (title) => {
-    MovieService.getMovieScores({title})
-    .then(data => {
+    MovieService.getMovieScores({ title }).then((data) => {
       let total = 0;
-      data.forEach(score => {
+      data.forEach((score) => {
         total += score.userRating;
-      })
+      });
       if (!total) {
-        return
+        return;
       }
-      const burntScore = (total/data.length).toFixed(1);
-      setAverageScore(burntScore)
+      const burntScore = (total / data.length).toFixed(1);
+      setAverageScore(burntScore);
 
-      if(burntScore < 1.5) {
-        return setAverageIcon(burnt)
-      } 
-      if(burntScore < 2.5) {
-        return setAverageIcon(kernel)
+      if (burntScore < 1.5) {
+        return setAverageIcon(burnt);
       }
-      if(burntScore < 3.5) {
-        return setAverageIcon(whitepopcorn)
+      if (burntScore < 2.5) {
+        return setAverageIcon(kernel);
       }
-      if(burntScore < 4.5) {
-        return setAverageIcon(slightlybuttered)
+      if (burntScore < 3.5) {
+        return setAverageIcon(whitepopcorn);
+      }
+      if (burntScore < 4.5) {
+        return setAverageIcon(slightlybuttered);
       } else {
-        setAverageIcon(buttered)
+        setAverageIcon(buttered);
       }
-    })
+    });
   };
 
   const handleCheckBox = () => {
@@ -169,7 +167,7 @@ function Home() {
           Genre: found.genre,
           Plot: found.plot,
         };
-        getMovieScoreAverage(found.title)
+        getMovieScoreAverage(found.title);
         setCheckbox(found.favorite);
         setUserRating(found.userRating);
         setResults(movieObj);
@@ -178,7 +176,7 @@ function Home() {
         setSearch("");
         return;
       }
-      getMovieScoreAverage(moviedata.data.Title)
+      getMovieScoreAverage(moviedata.data.Title);
       setUserRating(1);
       setResults(moviedata.data);
       setSearch("");
@@ -304,7 +302,6 @@ function Home() {
                     alt="..."
                   />
                   <div className="movieinfo__rating">
-                    {" "}
                     <h4 className="movieinfo__heading">Rating:</h4>
                     <span className="movieinfo__span">{results.Rated}</span>
                   </div>
@@ -314,13 +311,19 @@ function Home() {
                     <span className="movieinfo__span">{results.Released}</span>
                   </div>
 
-
-                  <div>
-                    <h4 className="movieinfo__heading">Average Burnt Score</h4>
-                    <span className="movieinfo__span">{averageScore}</span>
-                    {/* The size of this icon is out of control */}
-                    <div>
-                      {averageScore ? <img src={averageIcon} /> : <p>Nobody has rated this moie yet</p>}
+                  <div className="movieinfo__averagerating">
+                    <h4 className="movieinfo__heading">Average Burnt Score:</h4>
+                    <div className="movieinfo__avgratingsubdiv">
+                      {averageScore ? (
+                        <img className="movieratingimg" src={averageIcon} />
+                      ) : (
+                        <span className="movieinfo__span">
+                          Nobody has rated this movie yet.
+                        </span>
+                      )}
+                      <span className="movieinfo__span avgScore">
+                        {averageScore}
+                      </span>
                     </div>
                   </div>
 
