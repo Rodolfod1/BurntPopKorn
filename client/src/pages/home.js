@@ -163,7 +163,7 @@ function Home() {
           Title: found.title,
           Poster: found.poster,
           Rated: found.rated,
-          Released: found.released,
+          Released: found.releaseDate,
           Genre: found.genre,
           Plot: found.plot,
         };
@@ -231,7 +231,7 @@ function Home() {
         Title: data.title,
         Poster: data.poster,
         Rated: data.rated,
-        Released: data.released,
+        Released: data.releaseDate,
         Genre: data.genre,
         Plot: data.plot,
       };
