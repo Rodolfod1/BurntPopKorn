@@ -1,4 +1,4 @@
-# BurntPopkorn App
+# BurntPopkorn
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -16,7 +16,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Description
 
-BurntPopkorn is a web-based application that allows users to search for movies and TV shows, see relevant information about them and also see the average rating (based on other users' reviews). Users can rate the movies and TV shows, add comments about them and also add them to a list of favorites. Users can reference their reviews at a later date, update them and delete them. Users can also see graphs and charts related to their viewing activity.
+BurntPopkorn is a web-based application that allows users to search for movies and TV shows, see relevant information about them and also see the average rating for them based on other users' reviews. Users can rate the movies and TV shows, add comments about them and also add them to a list of favorites. Users can reference their reviews at a later date, update them and delete them. Users can also see graphs and charts related to their viewing and rating activity.
 
 ## User Story
 
