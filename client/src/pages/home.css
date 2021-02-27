@@ -220,6 +220,11 @@
   height: 1.5em;
 }
 
+.reviews__starfavorites {
+  width: 30px;
+  padding-right: 8px;
+}
+
 .moviereview__favoritesp {
   color: #ffffff;
   display: inline;

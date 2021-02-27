@@ -1,66 +1,80 @@
-# BurntPopKorn App
+# BurntPopkorn App
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#### Link to deployed app
- <https://https://burntpopkorn.herokuapp.com/>
-   
-MIT<br>[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## Table of Contents:
 
-## About this application:
-`React`,`Node.js`, `Mongodb`, `mongoose`, `Express`, `service workers`, `indexDB` application, handling api and html routes, offering an offline experience in case of intermittent internet service.
+- [Description](#description)
+- [User Story](#user-story)
+- [Technologies Used](#technologies-used)
+- [Link to Application](#link-to-application)
+- [License](#license)
+- [Screenshots](#screenshots)
+- [Contributors](#contributors)
 
-## Table of contents:
-* [Progressive Budget](#Progressive-Budget)
-* [About](#about-this-application)
-* [Usage](#usage)
-* [Installation](#installation)
-* [License](#license)
-* [Testing](#special-testing-instructions)
-* [Contributors](#contributors)
-* [Link to App](#Link-to-deployed-app)
+## Description
 
-# Usage:
-    Keffiyeh thundercats locavore, sustainable swag intelligentsia whatever keytar echo park portland leggings umami. Hammock snackwave stumptown keytar. Viral meditation hammock pour-over food truck vegan marfa forage. Before they sold out retro activated charcoal trust fund pok pok.
+BurntPopkorn is a web-based application that allows users to search for movies and TV shows, see relevant information about them and also see the average rating (based on other users' reviews). Users can rate the movies and TV shows, add comments about them and also add them to a list of favorites. Users can reference their reviews at a later date, update them and delete them. Users can also see graphs and charts related to their viewing activity.
 
-    Coloring book YOLO edison bulb PBR&B tumeric vaporware, gentrify iceland selfies flannel photo booth paleo shaman pabst. Selvage YOLO farm-to-table crucifix, retro cardigan stumptown. Enamel pin tousled succulents franzen, lyft readymade austin raw denim subway tile kickstarter +1 selvage. Mlkshk austin normcore schlitz cornhole ramps portland XOXO kickstarter shaman gluten-free typewriter franzen leggings.
+## User Story
 
+As a connoisseur of movies and TV shows…
 
-- Here it is an example on how this application works:
+I want a way to rate movies and TV shows I have seen and leave comments about them for future reference.
 
-![videoDemo](public/assets/Demo.gif)
+I also want a way to keep track of my favorite movies and TV shows.
 
----
-## Installation:
-### For Local Deployment: 
-The application requires `mongoose`, `Express`, `dotenv` and `morgan` node packages.
-a JSON file is provided with these dependencies please Run `npm install`  before executing `node Server.js`
+And I want a way to see my viewing activity over time.
 
-IMPORTANT: Please create a `dontenv` file for your MONGODB_URI and call the link to your Atlas database service connection with your username and password  password.
+## Technologies Used
 
-### For Remote Deployment: 
-Please "click" on this link to go to the heroku version of this app:
+- HTML
+- CSS
+- JavaScript
+- Node.js
+- Express
+- mongoose
+- MongoDB
+- ReactJS
+- React Chartjs
+- Passport
+- Axios
+- Webtoken
+- OMDb API
+- Bcrypt
+- Webpack
+- React Likert Scale
+- Heroku
 
-<https://burntpopkorn.herokuapp.com/>
+## Link to Application
+
+<https://https://burntpopkorn.herokuapp.com/>
 
 ## License
-I have used the MIT license for this application see repository documentation.
+
+This application uses the MIT license.
 
 <https://opensource.org/licenses/MIT>
 
-## Testing
-This can be manually tested or using any test tool
+## Screenshots:
 
-## Code Screenshots:
-- Service worker configuration example 
-![ServiceWorker](public/assets/img/ServiceWorkerImg.png)<br>
-- IndexDB Configuration for offline db handling:<br>
-![IndexDB](public/assets/img/IndexDBImg.png)
- 
+Create Account Page  
+![createaccount](readmeImages/createaccount.jpg)
 
+Login Page  
+![loginpage](readmeImages/loginpage.jpg)
+
+Home Page  
+![homepage](readmeImages/homepage.jpg)
+
+Activity Page  
+![activitypage](readmeImages/activitypage.jpg)
 
 ## Contributors:
+
 Megan Carnaghi <https://github.com/MeganCarnaghi><br>
 Brian Smak <https://github.com/bjsmak><br>
-Daniel Hawthorne-Foss  <https://github.com/dhfoss><br>
+Daniel Hawthorne-Foss <https://github.com/dhfoss><br>
 Rodolfo Diaz <https://github.com/Rodolfod1>

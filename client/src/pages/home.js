@@ -384,9 +384,9 @@ function Home() {
                     </label>
                     <div classname="moviereview__favinstructionsdiv">
                       <img
-                        className="reviews__star"
+                        className="reviews__starfavorites"
                         src={star}
-                        alt="movie ticket"
+                        alt="star icon"
                       />
                       <p className="moviereview__favoritesp">
                         Favorites will be denoted by the star icon in Your
