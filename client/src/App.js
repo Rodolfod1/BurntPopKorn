@@ -19,16 +19,19 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/">
-            <SignIn />
+            {!isAuthenticated ? <SignIn /> : <Redirect to="/home" />}
           </Route>
+
           <Route exact path="/home">
             {isAuthenticated ? <Home /> : <Redirect to="/login" /> }
           </Route>
+
           <Route exact path="/login">
-            <LogIn />
+            {!isAuthenticated ? <LogIn /> : <Redirect to="/home" />}
           </Route>
+
           <Route exact path="/stats">
-          {isAuthenticated ? <Stats /> : <Redirect to="/login" />}
+            {isAuthenticated ? <Stats /> : <Redirect to="/login" />}
           </Route>
         </Switch>
       </div>
