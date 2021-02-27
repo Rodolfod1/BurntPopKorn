@@ -4,7 +4,12 @@ import Home from "./pages/home";
 import SignIn from "./pages/signIn";
 import LogIn from "./pages/login";
 import Stats from "./pages/stats";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
 import "./utils/api";
 import "./index.css";
 
@@ -23,7 +28,7 @@ function App() {
           </Route>
 
           <Route exact path="/home">
-            {isAuthenticated ? <Home /> : <Redirect to="/login" /> }
+            {isAuthenticated ? <Home /> : <Redirect to="/login" />}
           </Route>
 
           <Route exact path="/login">

@@ -94,12 +94,23 @@
 
 .movieinfo__rating,
 .movieinfo__releasedate,
+.movieinfo__averagerating,
 .movieinfo__genre {
   margin: 20px 0;
 }
 
 .movieinfo__plot {
   padding-right: 40px;
+}
+
+.movieinfo__avgratingsubdiv {
+  display: flex;
+  align-items: center;
+}
+
+.movieratingimg {
+  width: 10%;
+  margin-right: 10px;
 }
 
 .movietitle__heading {
