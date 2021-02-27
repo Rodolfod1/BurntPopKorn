@@ -145,6 +145,17 @@ userRouter.get("/getmovie/:id", (req, res, next) => {
   });
 });
 
+
+// Get all movies by a title
+userRouter.put('/getmoviescores', (req, res, next) => {
+  console.log(req.body.title);
+  Movie.find({title: req.body.title}, 'userRating', (err, data) => {
+    if (err) return next(err);
+    res.json(data);
+  })
+})
+
+
 // Delete a movie
 userRouter.delete("/deletemovie/:id", (req, res, next) => {
   Movie.findByIdAndDelete({ _id: req.params.id }, (err, response) => {

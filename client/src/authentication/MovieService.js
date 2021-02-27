@@ -1,4 +1,4 @@
-// import { response } from "express";
+
 
 export const MovieService = {
     getMovies : ()=>{
@@ -32,6 +32,22 @@ export const MovieService = {
             return response.json().then(data => data);
         })
     },
+    getMovieScores: title => {
+        return fetch('/user/getmoviescores', {
+            method: 'put',
+            body : JSON.stringify(title),
+            headers: {
+                'Content-Type' : 'application/json'
+            }
+        })
+        .then(response => {
+            if(response.status !== 401){
+                return response.json().then(data => data);
+            }
+            else
+                return {message : {msgBody : "UnAuthorized",msgError : true}};
+            })
+    },
     deleteMovieById: id => {
         return fetch('/user/deletemovie/' + id, {
             method: 'DELETE'
@@ -39,13 +55,8 @@ export const MovieService = {
         .then(response => {
             return response.json().then(data => data);
         })
-        // .catch(err => {
-        //     console.log(err)
-        // })
     },
     updateMovieById: (id, movie) => {
-        console.log(id);
-        console.log(movie)
         return fetch('/user/updatemovie/' + id, {
             method: 'PUT',
             body : JSON.stringify(movie),
