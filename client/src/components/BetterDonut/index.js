@@ -67,7 +67,8 @@ const loadMovies= () =>{
         backgroundColor: "#000000",
         animationEnabled: true,
         legend: {
-          fontColor: "#ffffff"
+          fontColor: "#ffffff",
+          fontFamily: "FVAlmeloRegular"
         },
         title: {
             text: "",
@@ -79,13 +80,15 @@ const loadMovies= () =>{
             verticalAlign: "center",
             fontSize: 24,
             dockInsidePlotArea: true,
-            fontColor: "#ffffff"
+            fontColor: "#ffffff",
+            fontFamily: "FVAlmeloRegular"
         }],
         data: [{
             type: "doughnut",
             showInLegend: true,
             indexLabel: "{name}: {y}",
             indexLabelFontColor: "#ffffff",
+            indexLabelFontFamily: "FVAlmeloRegular",
             yValueFormatString: "#,###''",
             dataPoints: Dati
         }]
