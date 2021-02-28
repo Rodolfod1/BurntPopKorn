@@ -66,10 +66,10 @@ const loadMovies= () =>{
     const options = {
         animationEnabled: true,
         title: {
-            text: "Customer Satisfaction"
+            text: "YOUR GENRES"
         },
         subtitles: [{
-            text: "Viewed Genres",
+            text: "Burnt PopKorn",
             verticalAlign: "center",
             fontSize: 24,
             dockInsidePlotArea: true
@@ -78,7 +78,7 @@ const loadMovies= () =>{
             type: "doughnut",
             showInLegend: true,
             indexLabel: "{name}: {y}",
-            yValueFormatString: "#,###'%'",
+            yValueFormatString: "#,###''",
             dataPoints: Dati
         }]
     }

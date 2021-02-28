@@ -9,7 +9,7 @@ function Stats() {
     <div>
       <HeaderStats />
       <BarGraph />
-      <DoughnutChart />
+      {/* <DoughnutChart /> */}
       <BetterDonut />
     </div>
   );
