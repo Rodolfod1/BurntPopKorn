@@ -47,10 +47,11 @@ And I want a way to see my viewing activity over time.
 - Webpack
 - React Likert Scale
 - Heroku
+- CanvasJs-React-Charts
 
 ## Link to Application
 
-<https://https://burntpopkorn.herokuapp.com/>
+<https://burntpopkorn.herokuapp.com/>
 
 ## License
 
