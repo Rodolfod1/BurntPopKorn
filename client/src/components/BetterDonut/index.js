@@ -64,20 +64,28 @@ const loadMovies= () =>{
 
 }   
     const options = {
+        backgroundColor: "#000000",
         animationEnabled: true,
+        legend: {
+          fontColor: "#ffffff"
+        },
         title: {
-            text: "YOUR GENRES"
+            text: "",
+            fontSize: 24,
+            fontColor: "#ffffff"
         },
         subtitles: [{
-            text: "Burnt PopKorn",
+            text: "Your Genres",
             verticalAlign: "center",
             fontSize: 24,
-            dockInsidePlotArea: true
+            dockInsidePlotArea: true,
+            fontColor: "#ffffff"
         }],
         data: [{
             type: "doughnut",
             showInLegend: true,
             indexLabel: "{name}: {y}",
+            indexLabelFontColor: "#ffffff",
             yValueFormatString: "#,###''",
             dataPoints: Dati
         }]
