@@ -318,7 +318,7 @@ function Home() {
                         <img className="movieratingimg" src={averageIcon} />
                       ) : (
                         <span className="movieinfo__span">
-                          Nobody has rated this movie yet.
+                          This movie/TV show has not yet been rated.
                         </span>
                       )}
                       <span className="movieinfo__span avgScore">
