@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* height: calc(100vh - 174.3px); */
+  height: calc(100vh - 174.3px);
   display: flex;
   justify-content: flex-start;
 }
