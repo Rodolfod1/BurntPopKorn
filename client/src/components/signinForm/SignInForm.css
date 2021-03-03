@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: calc(100vh - 174.3px);
+  /* height: calc(100vh - 174.3px); */
   display: flex;
   justify-content: flex-start;
 }
@@ -51,7 +51,7 @@
   border-radius: 10px;
   font-family: "Hanken-Book";
   background-color: #fdcf05;
-  margin: 10px;
+  margin: 10px 0 100px 0;
   font-size: 18px;
 }
 

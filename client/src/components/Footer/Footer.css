@@ -1,9 +1,10 @@
 .footer {
-  padding: 40px;
+  padding: 20px;
   background-color: #000000;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .footer__img {
