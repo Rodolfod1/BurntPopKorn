@@ -1,0 +1,71 @@
+.header__home {
+  width: 100%;
+  background-color: #000000;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #fdcf05;
+}
+
+.header__logo {
+  width: 400px;
+}
+
+.header__button-signout {
+  padding: 15px 20px 10px 20px;
+  margin: 20px 20px 20px 7px;
+  background-color: #fdcf05;
+  border-radius: 10px;
+  font-family: "Hanken-Book";
+  font-size: 16px;
+}
+
+.header__button-activity {
+  padding: 15px 20px 10px 20px;
+  margin: 20px 7px 20px 20px;
+  background-color: #fdcf05;
+  border-radius: 10px;
+  font-family: "Hanken-Book";
+}
+
+.header__activity-link {
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+}
+
+.header__button-signout:hover {
+  cursor: pointer;
+}
+.header__button-activity:hover {
+  cursor: pointer;
+}
+
+.header__greetingAndBtn {
+  display: flex;
+}
+
+.header__greeting {
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 20px;
+  align-self: center;
+}
+
+/* Styling for mobile devices */
+
+@media only screen and (max-width: 768px) {
+  .header__logo {
+    width: 300px;
+  }
+  .header__home {
+    border-bottom: 2px solid #fdcf05;
+  }
+  .header__greeting {
+    display: none;
+  }
+  .header__button-activity {
+    display: none;
+  }
+}

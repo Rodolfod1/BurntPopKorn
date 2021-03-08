@@ -31,6 +31,15 @@ function HeaderHome() {
               VIEW ACTIVITY
             </Link>
           </button>
+
+          {/* New button for Reviews, didn't know which className to give it. */}
+          <button>
+            <Link to="/reviews">
+              Public Reviews
+            </Link>
+          </button>
+
+
           <button onClick={handleLogout} className="header__button-signout">
             LOG OUT
           </button>

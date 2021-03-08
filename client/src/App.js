@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import SignIn from "./pages/signIn";
 import LogIn from "./pages/login";
 import Stats from "./pages/stats";
+import Reviews from "./pages/reviews";
 import {
   BrowserRouter as Router,
   Route,
@@ -38,6 +39,11 @@ function App() {
           <Route exact path="/stats">
             {isAuthenticated ? <Stats /> : <Redirect to="/login" />}
           </Route>
+
+          <Route exact path="/reviews">
+            {isAuthenticated ? <Reviews /> : <Redirect to="/login" />}
+          </Route>
+
         </Switch>
       </div>
     </Router>
