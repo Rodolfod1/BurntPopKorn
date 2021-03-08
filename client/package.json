@@ -15,6 +15,7 @@
     "react-chartjs-2": "^2.11.1",
     "react-css-themr": "^2.1.2",
     "react-dom": "^17.0.1",
+    "react-modal": "^3.12.1",
     "react-rater-plus": "^0.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",

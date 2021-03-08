@@ -67,5 +67,19 @@ export const MovieService = {
         .then(response => {
             return response.json().then(data => data);
         });
+    },
+    //=================This will be changed to public
+    getFavoriteMovies: () => {
+        return fetch('/user/getfavoritemovies')
+        .then(response=>{
+            if(response.status !== 401){
+                return response.json().then(data => data);
+            }
+            else
+                return {message : {msgBody : "UnAuthorized",msgError : true}};
+        });
+        
+
     }
+
 }

@@ -156,6 +156,28 @@ userRouter.put('/getmoviescores', (req, res, next) => {
 })
 
 
+// Get all favorited movies
+// This will eventually be those marked 'PUBLIC' instead of 'FAVORITE'
+// =========================
+userRouter.get('/getfavoritemovies', passport.authenticate("jwt", { session: false}), (req, res, next) => {
+  User.find({})
+  .populate("movies")
+  .exec((err, document) => {
+    if (err)
+      res.status(500).json({
+        message: { msgBody: "An error has occured.", msgError: true },
+      });
+    else {
+      res
+        .status(200)
+        .json(document);
+    }
+  });
+})
+//======================================
+
+
+
 // Delete a movie
 userRouter.delete("/deletemovie/:id", (req, res, next) => {
   Movie.findByIdAndDelete({ _id: req.params.id }, (err, response) => {
