@@ -32,10 +32,9 @@ function HeaderHome() {
             </Link>
           </button>
 
-          {/* New button for Reviews, didn't know which className to give it. */}
-          <button>
-            <Link to="/reviews">
-              Public Reviews
+          <button className="header__button-reviews">
+            <Link className="header__reviews-link" to="/reviews">
+              PUBLIC REVIEWS
             </Link>
           </button>
 

@@ -21,6 +21,16 @@
   font-size: 16px;
 }
 
+.header__button-reviews {
+  padding: 15px 20px 10px 20px;
+  margin: 20px 7px 20px 7px;
+  background-color: #fdcf05;
+  border-radius: 10px;
+  font-family: "Hanken-Book";
+  font-size: 16px;
+}
+
+
 .header__button-activity {
   padding: 15px 20px 10px 20px;
   margin: 20px 7px 20px 20px;
@@ -30,6 +40,12 @@
 }
 
 .header__activity-link {
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+}
+
+.header__reviews-link {
   text-decoration: none;
   color: #000000;
   font-size: 16px;

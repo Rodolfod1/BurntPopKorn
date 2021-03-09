@@ -23,10 +23,14 @@
 
 .header__button-activity {
   padding: 15px 20px 10px 20px;
-  margin: 20px 7px 20px 20px;
+  margin: 20px 7px 20px 7px;
   background-color: #fdcf05;
   border-radius: 10px;
   font-family: "Hanken-Book";
+}
+
+.header__button-reviews {
+  margin: 20px 7px 20px 7px;
 }
 
 .header__activity-link {

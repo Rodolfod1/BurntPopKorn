@@ -4,6 +4,7 @@ import { AuthService } from "../../authentication/AuthService";
 import { AuthContext } from "../../authentication/AuthContext";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+import './HeaderReviews.css';
 
 function HeaderReviews() {
   const { user, setUser, setIsAuthenticated } = useContext(AuthContext);
@@ -26,12 +27,6 @@ function HeaderReviews() {
         <div className="header__greetingAndBtn">
           <p className="header__greeting">Welcome, {user.username}!</p>
 
-          <button className="header__button-activity">
-            {" "}
-            <Link className="header__activity-link" to="/stats">
-              VIEW ACTIVITY
-            </Link>
-          </button>
 
           <button className="header__button-activity">
             {" "}
@@ -39,6 +34,14 @@ function HeaderReviews() {
               HOME
             </Link>
           </button>
+
+          <button className="header__button-activity">
+            {" "}
+            <Link className="header__activity-link" to="/stats">
+              VIEW ACTIVITY
+            </Link>
+          </button>
+
 
 
 
