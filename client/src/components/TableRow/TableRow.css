@@ -1,0 +1,18 @@
+.open-review__button {
+    padding: 10px 10px 8px 10px;
+    background-color: #FDCF05;
+    color: #000000;
+    border-radius: 10px;
+    font-family: "Hanken-Book";
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+th {
+    padding: 10px;
+}
+
+tr:not(.table-top__row):hover {
+    opacity: .7;
+}

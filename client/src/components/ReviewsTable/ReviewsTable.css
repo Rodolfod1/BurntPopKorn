@@ -1,0 +1,36 @@
+/* I copied this from the homepage
+but it didn't look good for this page.
+But I don't understand "display: flex" yet */
+/* .reviews__main {
+    display: flex;
+    justify-content: center;
+} */
+
+.public-reviews__h1 {
+    text-align: center;
+    color: #00aceb;
+    font-family: "FVAlmeloRegular";
+    font-size: 48px;
+    margin: 40px;
+}
+
+table {
+    width: 75%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+table tr:nth-child(even){
+    background-color: #00aceb;
+    color: black;
+}
+
+.table-top__row th {
+    font-size: x-large;
+    border-bottom: 4px solid #FDCF05;
+}
+
+span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

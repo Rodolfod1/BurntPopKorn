@@ -3,6 +3,7 @@ import { MovieService } from '../../authentication/MovieService';
 import TableRow from '../TableRow';
 import SortButtons from '../SortButtons';
 import * as sortFunctions from './sortFunctions'
+import './ReviewsTable.css';
 
 const ReviewsTable = () => {
     const [publicMovies, setPublicMovies] = useState();
@@ -50,17 +51,19 @@ const ReviewsTable = () => {
 
 
     return (
-        <div>
+        <div className="reviews__main">
+            <h1 className="public-reviews__h1">Public Reviews</h1>
+
             {/* <input placeholder="Filter Search"></input> */}
             <SortButtons orderReviews={orderReviews}/>
             <table>
                 <thead>
-                    <tr>
+                    <tr className="table-top__row">
                         <th>#</th>
-                        <th>Username</th>
-                        <th>Title</th>
-                        <th>Burnt Score</th>
-                        <th>Review</th>
+                        <th>USERNAME</th>
+                        <th>TITLE</th>
+                        <th>BURNT SCORE</th>
+                        <th>REVIEW</th>
                     </tr>
                 </thead>
                 <tbody>

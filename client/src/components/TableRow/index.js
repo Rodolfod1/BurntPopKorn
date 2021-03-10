@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import './TableRow.css'
 
 // These were the default styles that came with React-Modal
 const customStyles = {
@@ -34,7 +35,7 @@ const TableRow = props => {
                 <th>{props.username}</th>
                 <th>{props.title}</th>
                 <th>{props.userRating}</th>
-                <th><button onClick={openModal}>View Review</button></th>
+                <th><span onClick={openModal}>VIEW</span></th>
             </tr>
             <Modal
                 isOpen={modalIsOpen}

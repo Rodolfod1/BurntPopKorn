@@ -5,11 +5,9 @@ import ReviewsTable from '../components/ReviewsTable';
 const Reviews = () => {
 
     return (
-        <div style={{color: 'white'}}>
+        <div className="reviews__main" style={{color: 'white'}}>
             <HeaderReviews />
-            <h1>Public Reviews</h1>
             <ReviewsTable />
-
         </div>
     )
 }
