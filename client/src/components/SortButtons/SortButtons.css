@@ -1,0 +1,18 @@
+.sortButtons__div {
+    text-align: center;
+    margin: 40px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.sort__button {
+    padding: 10px 10px 8px 10px;
+    background-color: #ee1d24;
+    color: #000000;
+    border-radius: 10px;
+    font-family: "Hanken-Book";
+    font-size: 14px;
+    margin-left: 20px;
+}
