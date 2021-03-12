@@ -3,16 +3,6 @@ import Modal from 'react-modal';
 import './TableRow.css'
 
 // These were the default styles that came with React-Modal
-const customStyles = {
-    content : {
-      top                   : '50%',
-      left                  : '50%',
-      right                 : 'auto',
-      bottom                : 'auto',
-      marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)'
-    }
-};
 
 
 const TableRow = props => {
@@ -25,6 +15,24 @@ const TableRow = props => {
     const closeModal = () => {
         setIsOpen(false);
     }
+
+    const customStyles = {
+        content : {
+          top                   : '50%',
+          left                  : '50%',
+          right                 : 'auto',
+          bottom                : 'auto',
+          marginRight           : '-50%',
+          transform             : 'translate(-50%, -50%)',
+          backgroundColor       : '#00ACEB',
+          borderStyle           : 'solid',
+          borderColor           : 'black'
+        },
+        overlay: {
+            backgroundColor: '#00ACEB80',
+        }
+    };
+    
 
     Modal.setAppElement('tr')
 
@@ -43,7 +51,7 @@ const TableRow = props => {
             >
                 <h2>{props.username}'s Review of {props.title}</h2>
                 <p>{props.review}</p>
-                <button onClick={closeModal}>Close</button>
+                <button className='close-modal__button' onClick={closeModal}>CLOSE</button>
             </Modal>
         </>
     )

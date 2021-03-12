@@ -74,6 +74,7 @@ const ReviewsTable = () => {
                         userRating={movie.movie.userRating}
                         title={movie.movie.title}
                         review={movie.movie.review}
+                        poster={movie.movie.poster}
                         key={index}
                         id={movie._id}
                         />
